@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    color: white;
+    padding-top: 150px;
+    z-index: 1;
+    width: 50%;
+    margin: auto;
+    border: 4px solid orange;
+}
+
+.siteName {
+    font-family: palanquin;
+    font-size: 2.875rem;
+    font-weight: bold;
+}
+
+.explore {
+    font-weight: bold;
+    font-size: 1.375rem;
+    font-family: raleway;
+}
+
+.exploreApi {
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: lato;
+    font-weight: regular;
+}
+
+#searchDetails {
+    text-align: right;
+}

@@ -1,0 +1,44 @@
+* {
+    font-family: Raleway;
+}
+
+.navbar {
+    background-color: #162D45;
+    padding: 10px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.navButton {
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: Lato;
+    font-size: 14px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.navLink {
+    font-size: 14px;
+    font-family: Lato;
+    cursor: pointer;
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    border: 1px solid red;
+}
+
+
+@media (max-width: 1000px) {
+    .navContainer {
+        width: 180px;
+        border: 1px solid blue;
+    }
+}

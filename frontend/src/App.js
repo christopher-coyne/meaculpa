@@ -1,8 +1,12 @@
+import './App.css'
+import Home from './screens/Home/Home'
 
 const App = () => {
   return (
     <>
-      <h1>Welcome to meaculpa</h1>
+      <main>
+        <Home />
+      </main>
     </>
   );
 }
