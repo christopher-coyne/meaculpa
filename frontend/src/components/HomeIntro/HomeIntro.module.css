@@ -1,3 +1,5 @@
+@import '../../vars.css';
+
 .container {
     text-align: center;
     color: white;
@@ -9,6 +11,10 @@
 }
 
 .siteName {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
     font-family: palanquin;
     font-size: 2.875rem;
     font-weight: bold;
@@ -25,6 +31,29 @@
     font-size: 16px;
     font-family: lato;
     font-weight: regular;
+}
+
+.submitBtn {
+    margin-top: 10px;
+    background: none;
+    color: white;
+    background-color: var(--color-darkestBlue);
+    border-radius: 5px;
+    font-family: Lato;
+    font-size: 14px;
+    padding: var(--padding-top-smallBtn) var(--padding-sides-smallBtn);
+    cursor: pointer;
+    border: none;
+}
+
+.submitContainer {
+    text-align: left;
+    font-size: 22px;
+    margin-top: 100px;
+}
+
+#submitPrompt {
+    font-size: 1.375rem;
 }
 
 #searchDetails {

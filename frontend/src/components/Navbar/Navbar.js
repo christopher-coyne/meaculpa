@@ -7,9 +7,9 @@ const Navbar = () => {
   <div className={styles.navbar}>
       <Logo />
       <div className={styles.navContainer}>
-        <div className={styles.navButton}>
+        <button className={styles.navButton}>
             Submit
-        </div>
+        </button>
         <div className={styles.navLink}>
           Full Data
         </div>
