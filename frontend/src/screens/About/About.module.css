@@ -1,0 +1,35 @@
+@import '../../vars.css';
+
+#aboutContainer {
+    text-align: center;
+}
+
+.titleContainer {
+    width: 75%;
+    border: 1px solid red;
+    font-family: 'Raleway';
+    margin: auto;
+    font-size: 2.125rem;
+    color: var(--color-darkestBlue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    
+}
+
+#logo {
+    color: var(--color-lightBlue);
+}
+
+#image {
+    /* color: var(--color-darkestBlue) */
+    /* quick fix to convert svg to darkestBlue color */
+    filter: brightness(0) saturate(100%) invert(12%) sepia(38%) saturate(1331%) hue-rotate(173deg) brightness(94%) contrast(89%);
+}
+
+#aboutContent {
+    width: 75%;
+    margin: auto;
+    border: 1px solid red;
+}
