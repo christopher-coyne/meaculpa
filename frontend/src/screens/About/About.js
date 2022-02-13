@@ -10,9 +10,9 @@ const About = () => {
       <Navbar />
       <div className={styles.titleContainer}>
         <img src={scale} alt="scale logo" id={styles.image}/>
-        <div>About <span id={styles.logo}>MeaCulpa</span></div>
+        <div>About <span className={styles.logo}>MeaCulpa</span></div>
       </div>
-      <div id={styles.aboutContent}>
+      <div className={styles.aboutContent}>
         {aboutText.map(about => <AboutBulletPoint title={about.title} text={about.text}/>)}
       </div>
   </div>;

@@ -5,7 +5,6 @@
 }
 
 .titleContainer {
-    width: 75%;
     border: 1px solid red;
     font-family: 'Raleway';
     margin: auto;
@@ -18,7 +17,7 @@
     
 }
 
-#logo {
+.logo {
     color: var(--color-lightBlue);
 }
 
@@ -28,7 +27,8 @@
     filter: brightness(0) saturate(100%) invert(12%) sepia(38%) saturate(1331%) hue-rotate(173deg) brightness(94%) contrast(89%);
 }
 
-#aboutContent {
+.aboutContent {
+    max-width: 750px;
     width: 75%;
     margin: auto;
     border: 1px solid red;

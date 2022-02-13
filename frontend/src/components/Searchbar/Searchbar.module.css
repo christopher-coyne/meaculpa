@@ -1,0 +1,51 @@
+.searchBar {
+    outline: none;
+    padding: 10px;
+    font-family: lato;
+    font-weight: 500;
+    font-size: 16px;
+    color: #484848;
+    border-radius: 6px 0px 0px 6px;
+    border: none;
+    width: 80%;
+}
+
+.searchButton {
+    font-family: lato;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    background-color: orange;
+    border-radius: 0px 6px 6px 0px;
+    text-align: center;
+    width: 10%;
+    padding: 10px 0px;
+}
+
+.magnifying {
+    width: 16px;
+}
+
+.navContainer {
+    width: 75%;
+    text-align: center;
+    margin: auto;
+    border: 1px solid green;
+}
+
+.results {
+    border: 1px solid yellow;
+    width: 90%;
+    margin-left: 5%;
+    position: relative;
+    z-index: 3;
+}
+
+.prompt {
+    font-family: lato;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 10%;
+    padding-top: 5px;
+    font-weight: 400;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './HomeIntro.module.css'
-import HomeSearch from './components/HomeSearch'
+import Searchbar from '../Searchbar/Searchbar.js'
 import scale from'../../assets/scale_icon.svg'
 
 const HomeIntro = () => {
@@ -10,7 +10,7 @@ const HomeIntro = () => {
           MeaCulpa</div>
       <p className={styles.explore}>Explore 100s of Columbia Course and Professor Reviews</p>
       <p className={styles.exploreApi}>Taken from Culpa's dataset, available at culpa.app</p>
-      <HomeSearch />
+      <Searchbar />
       <div id={styles.searchDetails}>
             <p>See full data with insights here</p>
       </div>
