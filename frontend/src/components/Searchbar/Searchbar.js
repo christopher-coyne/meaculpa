@@ -1,22 +1,47 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import styles from './Searchbar.module.css'
 import magnifyingGlass from '../../assets/search-solid.svg'
-import data from './data'
+import testData from './data'
 import Result from './components/Result'
 
 const Searchbar = () => {
-  return <>
-      <input type="text" className={styles.searchBar}></input>
-      <button className={styles.searchButton}>
-        <img src={magnifyingGlass} alt="whatever" className={styles.magnifying}></img>
-      </button>
-      <div className={styles.results}>
-          {data.map(data => <Result text={data}/>)}
-      </div>
+  const [userInput, setUserInput] = useState('');
+  const [filteredData, setFilteredData] = useState([])
 
-      <div className={styles.prompt}>
+  /*
+  useEffect(() => {
+    // Update the document title using the browser API
+    data
+  }, data);
+  */
+
+  const printInput = (e) => {
+    if (!e) {
+      setFilteredData([]);
+      return;
+    }
+    console.log("input e : ", e)
+    const data = testData.filter(d => {
+      return d.includes(e)
+    })
+    setFilteredData(data);
+  }
+
+
+  return <>
+      <input type="text" className={styles.searchBar} onKeyUp={(e) => printInput(e.target.value)}></input>
+      <button className={styles.searchButton}>
+        <img src={magnifyingGlass} alt="search" className={styles.magnifying}></img>
+      </button>
+
+      {filteredData.length > 0 ?
+      <div className={styles.results}>
+          {filteredData.map(data => <Result text={data}/>)}
+      </div> : <> </>}
+
+      {filteredData.length === 0 ? <div className={styles.prompt}>
       See full data with insights here
-      </div>
+      </div> : <> </>}
   </>;
 };
 
