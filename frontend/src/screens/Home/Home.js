@@ -9,7 +9,7 @@ const Home = () => {
   <div className={styles.gradient}>
     <Navbar />
     <div className={styles.homeIntro}>
-    <HomeIntro />
+      <HomeIntro />
     </div>
     <img src={mainLogo} alt="lion logo" className={styles.image}/>
   </div>

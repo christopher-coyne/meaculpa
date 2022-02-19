@@ -12,6 +12,8 @@
     z-index: 0;
     top: 10%;
     right: -7%;
+    overflow: hidden;
+
 }
 
 .homeIntro {
