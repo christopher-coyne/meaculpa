@@ -2,5 +2,34 @@
     background: #FDC830;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    padding: 50px 75px 20px 75px;
+    border-radius: 13px;
+    text-align: left;
+    position: relative;
+}
+
+.title {
+    font-size: 26px;
+    font-family: raleway;
+    font-weight: 700;
+}
+
+.nugget {
+    position: absolute;
+    left: 0%;
+    top: 5%;
+}
+
+.headerContainer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subheader {
+    font-size: 18px;
+    font-family: lato;
+    font-weight: 400;
 }
 

@@ -29,7 +29,7 @@ const Review = () => {
       <Navbar />
       <div className={styles.container}>
         <div className={styles.sidebar}>
-            <ReviewsSidebar type={reviewType} subject={reviewInfo[reviewType]} reviews={reviewInfo.reviews ? reviewInfo.reviews.length : 0}/>
+            <ReviewsSidebar type={reviewType} subject={reviewInfo[reviewType] ? reviewInfo[reviewType][0] : null} reviews={reviewInfo.reviews ? reviewInfo.reviews.length : null}/>
         </div>
         <div className={styles.reviews}>
             <Reviews />
