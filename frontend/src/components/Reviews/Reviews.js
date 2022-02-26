@@ -1,7 +1,11 @@
 import React from 'react';
+import ReviewsTexts from './ReviewsTexts/ReviewsTexts'
 
 const Reviews = () => {
-  return <div>reviews</div>;
+  return <>
+    <ReviewsDropdown />
+    <ReviewsTexts />
+  </>;
 };
 
 export default Reviews;
