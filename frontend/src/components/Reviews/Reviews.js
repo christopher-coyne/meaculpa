@@ -1,5 +1,6 @@
 import React from 'react';
-import ReviewsTexts from './ReviewsTexts/ReviewsTexts'
+import ReviewsTexts from './components/ReviewsTexts/ReviewsTexts'
+import ReviewsDropdown from './components/ReviewsDropdown/ReviewsDropdown'
 
 const Reviews = () => {
   return <>

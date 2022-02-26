@@ -1,0 +1,36 @@
+.container {
+    background-color: #284F93;
+    color: white;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 20px;
+    border-radius: 8px;
+}
+
+.addReview {
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: lato;
+    color: #284F93;
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.reviewNumber {
+    font-family: lato;
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.reviewFilter {
+    font-family: lato;
+    font-size: 15px;
+}
+
+.image {
+    margin-right: 10px;
+}
