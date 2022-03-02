@@ -1,10 +1,10 @@
 import React from 'react';
 import ReviewsText from './components/ReviewsText.js'
 
-const ReviewsTexts = () => {
+const ReviewsTexts = ({type, reviews, subject}) => {
+  console.log('reviews from reviewstexts: ', reviews)
   return <>
-    <ReviewsText />
-    <ReviewsText />
+    {reviews.map(review => <ReviewsText review={review}/>)}
   </>;
 };
 
