@@ -20,22 +20,35 @@ const Review = () => {
 
             const {data} = await axios.get(`/get-${reviewType}-reviews/${id}`)
             console.log('data ', data)
-            setReviewInfo(data.results)
+
+            setReviewInfo({...data.results, "type": reviewType, })
+            /*
+            setTimeout(function () {
+                console.log('review object : ', reviewInfo)
+             }, 1);
+             */
 
         }
         fetchData()
     }, [])
+
   return <>
       <Navbar />
       <div className={styles.container}>
         <div className={styles.sidebar}>
-            <ReviewsSidebar type={reviewType} subject={reviewInfo[reviewType] ? reviewInfo[reviewType][0] : null} reviews={reviewInfo.reviews ? reviewInfo.reviews.length : null}/>
+            <ReviewsSidebar reviewInfo={reviewInfo}/>
         </div>
         <div className={styles.reviews}>
-            <Reviews />
+            <Reviews reviewInfo={reviewInfo} setReviewInfo={setReviewInfo}/>
         </div>
       </div>
   </>;
 };
 
 export default Review;
+
+/*
+<div className={styles.reviews}>
+            <Reviews type={reviewType} subject={reviewInfo[reviewType] ? reviewInfo[reviewType][0] : null} reviews={reviewInfo.reviews ? reviewInfo : {}} setReviewInfo={setReviewInfo}/>
+        </div>
+        */

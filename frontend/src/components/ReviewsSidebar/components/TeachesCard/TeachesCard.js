@@ -6,25 +6,26 @@ function onlyUnique(val, index, self) {
   return self.indexOf(val) === index;
 }
 
-const TeachesCard = ({type, subject, reviews, fullReviews}) => {
+const TeachesCard = ({reviewInfo}) => {
   console.log('all from teaches card')
-  console.log('type ', type)
-  console.log('type ', subject)
-  console.log('type ', reviews)
-  console.log('teaches info ', fullReviews)
-  if (!reviews || reviews.length == 0) {
+  console.log('type ', reviewInfo.type)
+  console.log('type ', reviewInfo.type)
+  console.log('type ', reviewInfo.type)
+  if (!reviewInfo || !reviewInfo.reviews ) {
     return <>hello</>;
   }
 
   const link_dict = {}
-  fullReviews.forEach(review => {
-    link_dict[review.name] = review.course_id
-  })
+  if (reviewInfo.reviews) {
+    reviewInfo.reviews.forEach(review => {
+      link_dict[review.name] = review.course_id
+    })
+  }
 
   return <div className={styles.container}>
     <h1 className={styles.title}>Courses taught by this professor: </h1>
     {Object.keys(link_dict).map(link => {
-    const myLink = type =="professor" ? `course-review/:${link_dict[link]}` : `professor-review/:${link_dict[link]}`
+    const myLink = reviewInfo.type =="professor" ? `/course-review/:${link_dict[link]}` : `/professor-review/:${link_dict[link]}`
     return <Link to={myLink} className={styles.link}>{link}</Link>
   })}</div>
 

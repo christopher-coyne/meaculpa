@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './ReviewsText.module.css';
 
 const ReviewsText = ({review}) => {
-  console.log('review from texts : ', review)
-  const capName = review ? review.name.split(" ").map(str => str[0].toUpperCase() + str.slice(1)).join(" ") : ''
+  // console.log('review from texts : ', review)
+  const capName = review.name ? review.name.split(" ").map(str => str[0].toUpperCase() + str.slice(1)).join(" ") : ''
   if (!review) {
     return <></> 
   }

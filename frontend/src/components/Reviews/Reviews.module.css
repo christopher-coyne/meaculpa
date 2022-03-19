@@ -1,0 +1,30 @@
+.dropdown {
+    margin-top: 3px;
+    border: 2px solid #284F93;
+    position: absolute;
+    left: 200px;
+    z-index: 1;
+    list-style: none;
+    background-color: white;
+    padding: 0px 10px 10px 10px;
+    font-size: 16px;
+    font-family: lato;
+    color: #284F93;
+    text-align: left;
+    border-radius: 6px;
+}
+
+.option {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.option:hover {
+    background-color: #D1E2FF;
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+}
