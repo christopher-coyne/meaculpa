@@ -1,0 +1,48 @@
+.container {
+    width: 40%;
+    border: 1px solid red;
+    margin: auto;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.break {
+    color: #162D45;
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-family: lato;
+    font-weight: 700;
+    color: #162D45;
+}
+
+.title {
+    font-family: raleway;
+    font-size: 26px;
+    font-weight: 700;
+    color: #162D45;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    background-color: #dae8ff;
+}
+
+.largeInput {
+    height: 100px;
+}
+
+.terms {
+    font-style: italic;
+    font-size: 14px;
+    font-family: lato;
+    color: rgb(102, 102, 102);
+}
