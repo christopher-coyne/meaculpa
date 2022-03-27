@@ -4,6 +4,11 @@
     margin: auto;
     padding: 40px;
     border-radius: 15px;
+    text-align: right;
+}
+
+.form {
+    text-align: left;
 }
 
 .break {
@@ -45,4 +50,17 @@
     font-size: 14px;
     font-family: lato;
     color: rgb(102, 102, 102);
+    margin: auto;
+    text-align: right;
+}
+
+.button {
+    margin-top: 10px;
+    padding: 7px 15px;
+    background-color: #284F93;
+    border-radius: 8px;
+    color: white;
+    font-family: lato;
+    border: none;
+    cursor: pointer;
 }
