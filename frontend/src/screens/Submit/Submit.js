@@ -40,12 +40,12 @@ const Submit = () => {
     const submitHandler = async (e) => {
         e.preventDefault()
         console.log('submitting...', e.target[2].value)
-        const prof = e.target[0].value
+        const professor = e.target[0].value
         const course = e.target[1].value
         const content = e.target[2].value
-        const workload = e.target[2].value
+        const workload = e.target[3].value
         const url = '/submit'
-        const {data} = await axios.post(url, {prof, course, content, workload})
+        const {data} = await axios.post(url, {professor, course, content, workload})
 
         setErrors({'professor': data.professor, 'course': data.course, 'content': data.content, 'workload': data.workload})
         console.log('results from submit : ', data)
@@ -58,12 +58,12 @@ const Submit = () => {
       <form className={styles.form} onSubmit={e => submitHandler(e)}>
           <h1 className={styles.title}>Add Your Feedback</h1>
           <hr className={styles.break}></hr>
-          {errors.professor ? <FormError error={errors.professor} errorType="professor"/> : <></>}
           <label for="professor" className={styles.label}>Professor</label>
+          {errors.professor ? <FormError error={errors.professor} errorType="professor"/> : <></>}
           <input type="text" id="professor" className={styles.input} placeholder="Select from options" onChange={(e) => searchInput(e, 'professor')} value={professorInput}></input>
           <FormResults input={professorResults} type="professor" setInput={setProfessorInput} setResults={setProfessorResults}/>
-          {errors.course ? <FormError error={errors.course} errorType="course"/> : <></>}
           <label for="course" className={styles.label}>Course</label>
+          {errors.course ? <FormError error={errors.course} errorType="course"/> : <></>}
           <input type="text" id="course" className={styles.input} placeholder="Select from options" onChange={(e) => searchInput(e, 'course')} value={courseInput}></input>
           <FormResults input={courseResults} type="course" setInput={setCourseInput} setResults={setCourseResults}/>
           <label for="reviewbody" className={styles.label}>Review Body</label>
