@@ -53,8 +53,8 @@ const Submit = () => {
   return (<>
   <Navbar></Navbar>
   <div className={styles.container}>
-      <h1>back</h1>
-      <img src={formLogo} alt="lion logo" />
+      <h1 className={styles.back}>{'< back'}</h1>
+      <img className={styles.icon} src={formLogo} alt="lion logo" />
       <form className={styles.form} onSubmit={e => submitHandler(e)}>
           <h1 className={styles.title}>Add Your Feedback</h1>
           <hr className={styles.break}></hr>
