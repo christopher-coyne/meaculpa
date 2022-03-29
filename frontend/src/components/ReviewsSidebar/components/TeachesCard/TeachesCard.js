@@ -22,9 +22,13 @@ const TeachesCard = ({reviewInfo}) => {
     })
   }
 
+  const link_sorted = [...Object.keys(link_dict)]
+  link_sorted.sort()
+  console.log('ink sorted', link_sorted)
+
   return <div className={styles.container}>
     <h1 className={styles.title}>Courses taught by this professor: </h1>
-    {Object.keys(link_dict).map(link => {
+    {link_sorted.map(link => {
     const myLink = reviewInfo.type =="professor" ? `/course-review/:${link_dict[link]}` : `/professor-review/:${link_dict[link]}`
     return <Link to={myLink} className={styles.link}>{link}</Link>
   })}</div>
