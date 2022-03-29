@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Logo.module.css';
+import { Link } from 'react-router-dom'
 
 const Logo = () => {
-  return <div className={styles.logo}>MeaCulpa</div>;
+  return <Link to="/" className={styles.logo}>MeaCulpa</Link>;
 };
 
 export default Logo;
