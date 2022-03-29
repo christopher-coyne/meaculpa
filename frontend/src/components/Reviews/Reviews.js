@@ -81,6 +81,9 @@ const Reviews = ({reviewInfo, setReviewInfo}) => {
         </ul>
  : <> </>}
     <ReviewsTexts reviewInfo={reviewInfo}/>
+    <div className={styles.pageSelect}>
+      page 1 of 3
+    </div>
   </div>;
 };
 
