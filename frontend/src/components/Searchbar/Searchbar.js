@@ -1,26 +1,12 @@
 import {React, useEffect, useState} from 'react';
 import styles from './Searchbar.module.css'
 import magnifyingGlass from '../../assets/search-solid.svg'
-import testData from './data'
 import Result from './components/Result'
 import axios from 'axios'
 
 const Searchbar = () => {
   // const [userInput, setUserInput] = useState('');
   const [filteredData, setFilteredData] = useState([])
-
-  /*
-  useEffect(() => {
-    // Update the document title using the browser API
-    // test search
-    if 
-    const fetchData = async () => {
-      const { data } = await axios.get('/search-prof-name/adam')
-      console.log('data ', data)
-    }
-    fetchData()
-  }, []);
-  */
 
   const fetchData = async () => {
     const { data } = await axios.get('/search-prof-name/adam')
@@ -59,18 +45,15 @@ const Searchbar = () => {
 
   return <>
       <input type="text" className={styles.searchBar} onKeyUp={(e) => printInput(e.target.value)}></input>
-      <button className={styles.searchButton}>
-        <img src={magnifyingGlass} alt="search" className={styles.magnifying}></img>
-      </button>
 
       {filteredData.length > 0 ?
       <div className={styles.results}>
           {filteredData.map(data => <Result text={data}/>)}
       </div> : <> </>}
 
-      {filteredData.length === 0 ? <div className={styles.prompt}>
+      {filteredData.length === 0 ? <p className={styles.prompt}>
       See full data with insights here
-      </div> : <> </>}
+      </p> : <> </>}
   </>;
 };
 

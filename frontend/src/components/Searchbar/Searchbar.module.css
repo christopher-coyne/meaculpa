@@ -5,7 +5,7 @@
     font-weight: 500;
     font-size: 16px;
     color: #484848;
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 6px;
     border: none;
     width: 80%;
 }
@@ -36,7 +36,7 @@
 .results {
     border: 1px solid yellow;
     width: 80%;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 5px;
     position: relative;
     z-index: 3;
