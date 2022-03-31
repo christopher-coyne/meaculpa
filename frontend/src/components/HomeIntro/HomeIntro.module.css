@@ -11,7 +11,7 @@
     width: 50%;
     margin: auto;
     position: relative;
-    height: 80vh;
+    height: 85vh;
     max-width: 750px;
 }
 
@@ -32,6 +32,46 @@
     font-family: raleway;
 }
 
+@media (max-width: 1300px) {
+    .container {
+        padding-top: 80px;
+    }
+    .explore {
+        font-size: 20px;
+    }
+    .siteName {
+        font-size: 40px;
+    }
+    #submitPrompt {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        padding-top: 30px;
+        border: 3px solid orange;
+        width: 65%;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding-top: 30px;
+        border: 3px solid red;
+        width: 75%;
+    }
+    .siteName {
+        font-size: 32px;
+    }
+    .explore {
+        font-size: 18px;
+    }
+    .exploreApi {
+        font-size: 12px;
+    }
+}
+
 .exploreApi {
     margin-top: 10px;
     font-size: 16px;
@@ -40,17 +80,18 @@
     margin-bottom: 20px;
 }
 
-.submitBtn {
+.submitLink {
+    display: inline-block;
+    text-decoration: none;
     margin-top: 10px;
     background: none;
     color: white;
     background-color: var(--color-darkestBlue);
     border-radius: 5px;
     font-family: Lato;
-    font-size: 14px;
-    padding: var(--padding-top-smallBtn) var(--padding-sides-smallBtn);
+    font-size: 16px;
+    padding: 10px;
     cursor: pointer;
-    border: none;
 }
 
 .submitContainer {
@@ -58,7 +99,6 @@
     bottom: 0%;
     left: 10%;
     text-align: left;
-    font-size: 22px;
     margin-top: 100px;
 }
 

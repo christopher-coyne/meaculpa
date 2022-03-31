@@ -10,9 +10,12 @@
 
 .image {
     position: absolute;
+    width: 45%;
     z-index: 0;
-    top: 10%;
+    /* top: 10%; */
+    top: 100px;
     right: -7%;
+    min-width: 300px;
 }
 
 .homeIntro {
@@ -21,12 +24,40 @@
     overflow: hidden;
 }
 
+
 @media (max-width: 1000px) {
     .image {
-        width: 180px;
+        top: 220px;
         border: 1px solid blue;
     }
 }
+
+@media (max-width: 700px) {
+    .image {
+        top: 320px;
+        border: 3px solid orange;
+    }
+}
+
+/*
+@media (max-width: 1000px) {
+    .image {
+        width: 500px;
+        border: 1px solid red;
+        top: 20%;
+        right: -18%;
+    }
+}
+
+@media (max-width: 800px) {
+    .image {
+        width: 500px;
+        border: 1px solid red;
+        top: 20%;
+        right: -16%;
+    }
+}
+*/
 
 /*
 .gradient {
