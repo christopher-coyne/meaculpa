@@ -1,0 +1,10 @@
+.container {
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    font-family: raleway;
+    font-size: 32px;
+    font-weight: 600;
+}

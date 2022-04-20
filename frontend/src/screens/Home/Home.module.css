@@ -29,6 +29,7 @@
     .image {
         top: 220px;
         border: 1px solid blue;
+        right: -9%;
     }
 }
 
