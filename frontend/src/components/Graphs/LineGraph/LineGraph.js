@@ -1,13 +1,17 @@
 import React from 'react';
-import { csv, scaleTime, timeFormat, scaleOrdinal, max, format, extent} from 'd3'
-import AxisBottom from '../components/AxisBottom/AxisBottom.js'
+import {scaleLinear, max, scaleBand} from 'd3'
 import styles from './LineGraph.module.css'
-
-const width = 960;
-const height = 500;
-
-const xMargin = 200;
-const yMargin = 200;
+import { Line } from 'react-chartjs-2'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement,
+  LineElement,
+} from 'chart.js';
 
 const mydata = [
     {year: '1999', reviews: '10'},
@@ -35,17 +39,39 @@ const mydata = [
     {year: '2021', reviews: '18'},
 ]
 
-const LineGraph = ({data}) => {
-    // data is rom 1999 to 2021
-    const xScale = scaleTime().domain([1999, 2021]).range(800)
-    const xAxisTickFormat = timeFormat('%Y')
+const datasets = [{
+    label: 'paul blaer',
+    data: [12, 19, 3, 5, 2],
+    backgroundColor: ['red', 'orange', 'blue', 'gray', 'black']
+  },
+  {
+    label: 'adam cannon',
+    data: [10, 14, 7, 7, 9, 12, 17],
+    backgroundColor: ['red', 'orange', 'blue', 'gray', 'black']
+  },
+]
 
-  return (<svg width={500} height={500} className={styles.container}>
-      <g transform={`translate(150,0)`}>
-          <AxisBottom xScale={xScale} tickFormat={xAxisTickFormat} tickOffset={3}/>
-      </g>
-      
-  </svg>);
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    Title,
+    Tooltip,
+    Legend,
+    PointElement,
+    LineElement,
+  );
+
+const labels = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
+
+const LineGraph = ({data}) => {
+    return (
+        <Line data={{labels: labels, datasets: datasets}}
+        options = {{
+          responsive: true,
+          maintainAspectRatio: true,
+        }}
+        />
+        )
 };
 
 export default LineGraph;

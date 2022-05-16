@@ -3,6 +3,8 @@ import styles from './Data.module.css'
 import Navbar from '../../components/Navbar/Navbar'
 import LineGraph from '../../components/Graphs/LineGraph/LineGraph'
 import BarChart from '../../components/Graphs/BarChart/BarChart'
+import ScatterPlot from '../../components/Graphs/ScatterPlot/ScatterPlot'
+import FilterButton from '../../components/Graphs/components/FilterButton/FilterButton'
 import axios from 'axios'
 
 const sampleData = [{ name: 'analysis of algorithms i', date: 'November 18, 2009' },
@@ -43,26 +45,38 @@ const sampleData = [{ name: 'analysis of algorithms i', date: 'November 18, 2009
 { name: 'introduction to databases', date: 'May 19, 2013' },
 { name: 'artificial intelligence', date: 'May 19, 2013' },]
 
-const barData = [
-    {name: 'operating systems i', count: '7'},
-    {name: 'introduction to databses', count: '5'},
-    {name: 'computer graphics', count: '1'},
-    {name: 'user interface design', count: '3'},
-    {name: 'artificial intelligence', count: '2.5'},
-    {name: 'analysis of algorithms', count: '1.1'},
-    {name: 'computer vision', count: '4.33'},
-    {name: 'data structures and algorithms', count: '5.3'},
-]
+const barData = {
+    "brutal": [
+    {name: 'Operating Systems', count: '7'},
+    {name: 'UI Design', count: '3'},
+    {name: 'Artificial Intelligence', count: '2.5'},
+    {name: 'Analysis of Algorithms', count: '1.1'},
+    {name: 'Intro to Java', count: '5.3'},
+    ],
+    "amazing": [
+        {name: 'Operating Systems', count: '3'},
+        {name: 'UI Design', count: '10.4'},
+        {name: 'Artificial Intelligence', count: '4.2'},
+        {name: 'Analysis of Algorithms', count: '0.4'},
+        {name: 'Intro to Java', count: '7.5'},
+    ]
+}
+
+const margins = {top: 40, left: 40, right: 40, bottom: 40}
 
 const Data = () => {
-    const [coursePop, setCoursePop] = useState([])
+    const [chartData, setChartData] = useState({})
+    const [wordSelect, setWordSelect] = useState(["amazing"])
+
+    const barButtons = ["amazing", "brutal"]
 
     /*
     useEffect(() => {
         const fetchData = async () => {
 
-            const {data} = await axios.get(`/get-popular-courses-full`)
-            console.log('data ', data)
+            const {data} = await axios.get(`/chart-data`)
+            console.log('chart data : ', data)
+            setChartData({...chartData, scatter: data})
 
         }
         fetchData()
@@ -71,7 +85,17 @@ const Data = () => {
   return <>
         <Navbar />
       <h1 className={styles.title}>Full Data and Insights</h1>
-      <BarChart data={barData} width={900} height={500}/>
+      {barButtons.map(name => <FilterButton name={name} selected={wordSelect} onClick={() => setWordSelect(name)}/>)}
+      <div className={styles.chartContainer}>
+      <BarChart data={barData[wordSelect]} width={900} height={500} margins={margins} selected={wordSelect}/>
+      </div>
+      <div className={styles.lineContainer}>
+      <LineGraph />
+      </div>
+      <div className={styles.scatterContainer}>
+      <ScatterPlot data={chartData['scatter']}/>
+      </div>
+      
   </>;
 };
 

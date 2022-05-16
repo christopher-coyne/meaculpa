@@ -13,3 +13,15 @@
     width: 500px;
     height: 500px;
 }
+
+.chartContainer {
+    width: 50%;
+}
+
+.lineContainer {
+    width: 30%;
+}
+
+.scatterContainer {
+    width: 50%;
+}
