@@ -16,15 +16,6 @@ import {
   TimeScale,
 } from 'chart.js';
 
-const dates = ['2021-01-04', '2021-01-08', '2021-01-01', '2021-01-03', '2021-01-05']
-
-const data_json = {
-  labels: dates,
-  datasets: [{
-    label: 'test label',
-      data: [1, 2, 4, 7, 4],
-    }]
-}
 
 ChartJS.register(
     CategoryScale,
@@ -37,9 +28,59 @@ ChartJS.register(
     TimeScale,
   );
 
-// const labels = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
-
 const LineGraph = ({data}) => {
+
+  if (!data) {
+    return (<>Loading...</>)
+  }
+
+  const label_to_data = {
+    'vgr': data.vgr.names,
+    'applications': data.applications.names,
+    'systems': data.systems.names,
+    'intelligent systems': data.intelligent_systems.names,
+    'theory': data.theory.names,
+    'intro': data.intro.names
+  }
+  console.log('data reactions : ', data.reactions)
+  const data_json = {
+    labels: ["1999-01-01", "2021-12-30"],
+    datasets: [
+      {
+      label: 'vgr',
+        data: data.vgr.vals.map((val, i) => {return {'y': val, 'x': data.vgr.dates[i]}}),
+        backgroundColor: 'rgb(255, 146, 138)'
+      },
+      {
+        label: 'applications',
+          data: data.applications.vals.map((val, i) => {return {'y': val, 'x': data.applications.dates[i]}}),
+          backgroundColor: 'rgb(175, 255, 138)'
+        },
+      {
+        label: 'systems',
+          data: data.systems.vals.map((val, i) => {return {'y': val, 'x': data.systems.dates[i]}}),
+          backgroundColor: 'rgb(110, 219, 255)'
+        },
+      {
+        label: 'intelligent systems',
+          data: data.intelligent_systems.vals.map((val, i) => {return {'y': val, 'x': data.intelligent_systems.dates[i]}}),
+          backgroundColor: 'rgb(110, 219, 255)'
+        },
+      {
+        label: 'theory',
+        data: data.theory.vals.map((val, i) => {return {'y': val, 'x': data.theory.dates[i]}}),
+        backgroundColor: 'rgb(238, 255, 110)'
+      },
+      {
+        label: 'intro',
+        data: data.intro.vals.map((val, i) => {return {'y': val, 'x': data.intro.dates[i]}}),
+        backgroundColor: 'rgb(255, 138, 210)'
+      },
+    ],
+    }
+
+    console.log('datasets : ', data_json)
+
     return (
         <Scatter data={data_json}
         options = {{
@@ -49,7 +90,9 @@ const LineGraph = ({data}) => {
             x: {
               type: 'time',
               time: {
-                unit: 'day'
+                unit: 'year'
+              },
+              ticks: {
               },
               adapters: {
                 date: {
@@ -60,7 +103,24 @@ const LineGraph = ({data}) => {
             y: {
               beginAtZero: true,
             }
-          }
+          },
+          plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        let label = context.dataset.label;
+
+                        console.log('context : ', context)
+
+                        console.log('index : ', context.element.$context.index)
+
+                        console.log('res', label_to_data[label][context.element.$context.index])
+
+                        return (label_to_data[label][context.element.$context.index])
+                    }
+                }
+            }
+        }
         }}
         />
         )
