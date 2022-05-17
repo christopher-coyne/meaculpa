@@ -45,52 +45,33 @@ const sampleData = [{ name: 'analysis of algorithms i', date: 'November 18, 2009
 { name: 'introduction to databases', date: 'May 19, 2013' },
 { name: 'artificial intelligence', date: 'May 19, 2013' },]
 
-const barData = {
-    "brutal": [
-    {name: 'Operating Systems', count: '7'},
-    {name: 'UI Design', count: '3'},
-    {name: 'Artificial Intelligence', count: '2.5'},
-    {name: 'Analysis of Algorithms', count: '1.1'},
-    {name: 'Intro to Java', count: '5.3'},
-    ],
-    "amazing": [
-        {name: 'Operating Systems', count: '3'},
-        {name: 'UI Design', count: '10.4'},
-        {name: 'Artificial Intelligence', count: '4.2'},
-        {name: 'Analysis of Algorithms', count: '0.4'},
-        {name: 'Intro to Java', count: '7.5'},
-    ]
-}
-
 const margins = {top: 40, left: 40, right: 40, bottom: 40}
 
 const Data = () => {
     const [chartData, setChartData] = useState({})
-    const [wordSelect, setWordSelect] = useState(["amazing"])
+    const [wordSelect, setWordSelect] = useState(["easy"])
 
-    const barButtons = ["amazing", "brutal"]
+    const barButtons = ["easy", "hard", "interesting", "boring", "fair"]
 
-    /*
     useEffect(() => {
         const fetchData = async () => {
 
-            const {data} = await axios.get(`/chart-data`)
+            const {data} = await axios.get(`/get-chart-data`)
             console.log('chart data : ', data)
-            setChartData({...chartData, scatter: data})
+            setChartData({...chartData, scatter: data.scatter, bar: data.bar, line: data.line})
 
         }
         fetchData()
     }, [])
-    */
   return <>
         <Navbar />
       <h1 className={styles.title}>Full Data and Insights</h1>
       {barButtons.map(name => <FilterButton name={name} selected={wordSelect} onClick={() => setWordSelect(name)}/>)}
       <div className={styles.chartContainer}>
-      <BarChart data={barData[wordSelect]} width={900} height={500} margins={margins} selected={wordSelect}/>
+      <BarChart data={chartData['bar']} selected={wordSelect}/>
       </div>
       <div className={styles.lineContainer}>
-      <LineGraph />
+      <LineGraph data={chartData['line']}/>
       </div>
       <div className={styles.scatterContainer}>
       <ScatterPlot data={chartData['scatter']}/>
