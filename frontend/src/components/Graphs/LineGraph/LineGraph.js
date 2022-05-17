@@ -61,30 +61,52 @@ ChartJS.register(
     LineElement,
   );
 
-// const labels = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
+const labels = ['1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021']
 const colors = {'adam cannon': 'red', 'martha kim': 'blue', 'paul blaer': 'yellow', 'jae lee': 'green', 'ansaf salleb-aouissi': 'orange'}
 
 const LineGraph = ({data}) => {
   if (!data) {
     return (<>Loading...</>)
   }
-  const prof_datasets = data.profs.map(prof_name => {
-    return {'label': prof_name, 'data': data[prof_name], color: colors[prof_name]}
-  })
+
+  console.log('new data from line : ', data)
+  const data_json = {
+    labels: labels,
+    datasets: data.profs.map(prof_name => {
+      return {'label': prof_name, borderColor:colors[prof_name], 'data': Object.keys(data[prof_name]).sort().map(date => {return {'x': date, 'y': data[prof_name][date]}}), color: colors[prof_name]}
+    }),
+    }
   /*
-  const datasets = [
+  const prof_datasets = data.profs.map(prof_name => {
+    return {'label': prof_name, 'data': Object.keys(data[prof_name]).sort().map(date => {return {'x': date, 'y': data[prof_name][date]}}), color: colors[prof_name]}
+  })
+  */
+  const prof_datasets = [
     {
       label: 'paul blaer',
       data: data['paul blaer'],
       backgroundColor: ['red', 'orange', 'blue', 'gray', 'black']
     },
   ]
-  */
     return (
-        <Line data={{labels: data.profs, datasets: prof_datasets}}
+        <Line data={data_json}
         options = {{
           responsive: true,
           maintainAspectRatio: true,
+          scales: {
+            y: {
+              title: {
+                display: true,
+                text: 'Reviews',
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Year',
+              }
+            }
+          }
         }}
         />
         )

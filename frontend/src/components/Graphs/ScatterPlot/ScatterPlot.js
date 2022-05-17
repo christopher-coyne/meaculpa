@@ -88,6 +88,10 @@ const LineGraph = ({data}) => {
           maintainAspectRatio: true,
           scales: {
             x: {
+              title: {
+                display: true,
+                text: 'Review',
+              },
               type: 'time',
               time: {
                 unit: 'year'
@@ -102,6 +106,10 @@ const LineGraph = ({data}) => {
             },
             y: {
               beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Number of Reactions',
+              }
             }
           },
           plugins: {
@@ -110,11 +118,13 @@ const LineGraph = ({data}) => {
                     label: function(context) {
                         let label = context.dataset.label;
 
+                        /*
                         console.log('context : ', context)
 
                         console.log('index : ', context.element.$context.index)
 
                         console.log('res', label_to_data[label][context.element.$context.index])
+                        */
 
                         return (label_to_data[label][context.element.$context.index])
                     }

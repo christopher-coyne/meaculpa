@@ -71,6 +71,20 @@ const BarChart = ({data, selected}) => {
   options = {{
     responsive: true,
     maintainAspectRatio: true,
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: 'Occurences per review',
+        }
+      },
+      x: {
+        title: {
+          display: true,
+          text: 'Course',
+        }
+      }
+    }
   }}
   />
   )
