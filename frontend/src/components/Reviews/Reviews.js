@@ -69,8 +69,11 @@ const Reviews = ({reviewInfo, setReviewInfo}) => {
 
   }
 
+  if (!reviewInfo.reviews) {
+    return <div>Loading...</div>
+  }
   return <div className={styles.container}>
-    <ReviewsDropdown setOpen={setOpen} open={open} dropState={dropState} />
+    <ReviewsDropdown setOpen={setOpen} open={open} dropState={dropState} numReviews={reviewInfo.reviews.length}/>
     {open == 1 ? 
       <ul className={styles.dropdown}>
         {options.map(option => {
@@ -82,9 +85,10 @@ const Reviews = ({reviewInfo, setReviewInfo}) => {
         </ul>
  : <> </>}
     <ReviewsTexts reviewInfo={reviewInfo} pages={showPages}/>
+    
     <div className={styles.pageSelect}>
       <h3>Showing page {showPages} of {Math.ceil(reviewInfo.reviews.length / 10)}</h3>
-      <button className={styles.nextPageButton} onClick={() => setShowPages(showPages + 1)}>
+      <button onClick={() => setShowPages(showPages + 1)}>
         View More
       </button>
       {showPages > 1 &&
