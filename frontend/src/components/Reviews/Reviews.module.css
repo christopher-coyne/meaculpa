@@ -32,4 +32,21 @@
 .pageSelect {
     font-family: lato;
     font-size: 20px;
+    text-align: left;
 }
+
+.nextPageButton {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: blue;
+}
+
+.hidePageButton {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: red;
+    margin: 5px;
+}
+

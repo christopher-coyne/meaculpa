@@ -5,14 +5,26 @@
 
 .sidebar {
     width: 30%;
-    border: 3px solid red;
     text-align: center;
     padding: 20px;
 }
 
 .reviews {
     width: 70%;
-    border: 3px solid blue;
     text-align: center;
     padding: 20px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+    .reviews {
+        width: 100%;
+    }
+    .sidebar {
+        width: 100%;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
 }

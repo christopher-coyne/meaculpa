@@ -38,6 +38,7 @@ const constroversialSort = (a, b) => {
 const Reviews = ({reviewInfo, setReviewInfo}) => {
   const [open, setOpen] = useState(0)
   const [dropState, setDropState] = useState('Recent')
+  const [showPages, setShowPages] = useState(1)
 
   const select = (newState) => {
     setDropState(newState)
@@ -46,7 +47,7 @@ const Reviews = ({reviewInfo, setReviewInfo}) => {
     // update review info
     console.log('reviews from click : ', reviewInfo)
 
-    //sort them based on state
+    // sort them based on state
     // sort by most recent to oldest
     let newReviews = [...reviewInfo.reviews]
     switch(newState) {
@@ -80,9 +81,17 @@ const Reviews = ({reviewInfo, setReviewInfo}) => {
       })}
         </ul>
  : <> </>}
-    <ReviewsTexts reviewInfo={reviewInfo}/>
+    <ReviewsTexts reviewInfo={reviewInfo} pages={showPages}/>
     <div className={styles.pageSelect}>
-      page 1 of 3
+      <h3>Showing page {showPages} of {Math.ceil(reviewInfo.reviews.length / 10)}</h3>
+      <button className={styles.nextPageButton} onClick={() => setShowPages(showPages + 1)}>
+        View More
+      </button>
+      {showPages > 1 &&
+        <button className={styles.hidePageButton} onClick={() => setShowPages(1)}>
+         Hide
+        </button>
+      }
     </div>
   </div>;
 };
