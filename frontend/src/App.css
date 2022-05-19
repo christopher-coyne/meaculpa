@@ -20,3 +20,16 @@ body {
     padding: 10px;
     border: 1px solid red;
 }
+
+.chartBox {
+    border: 5px solid green;
+}
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
