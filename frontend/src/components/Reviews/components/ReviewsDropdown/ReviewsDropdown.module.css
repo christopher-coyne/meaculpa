@@ -38,3 +38,16 @@
 .image {
     margin-right: 10px;
 }
+
+@media (max-width: 600px) {
+    .image {
+        display: none;
+    }
+    .reviewNumber {
+        display: none;
+    }
+    .reviewFilter {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
