@@ -1,18 +1,19 @@
 import React from 'react';
 import styles from './Navbar.module.css';
 import Logo from './components/Logo.js'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
   <div className={styles.navbar}>
       <Logo />
       <div className={styles.navContainer}>
-        <button className={styles.navButton}>
+        <Link className={styles.navButton} to="/submit">
             Submit
-        </button>
-        <div className={styles.navLink}>
+        </Link>
+        <Link className={styles.navLink} to="/full-data">
           Full Data
-        </div>
+        </Link>
       </div>
   </div>
   );

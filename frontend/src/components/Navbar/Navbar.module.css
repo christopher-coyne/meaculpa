@@ -21,11 +21,14 @@
     font-size: 14px;
     padding: var(--padding-top-smallBtn) var(--padding-sides-smallBtn);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .navLink {
     font-size: 14px;
     font-family: Lato;
+    text-decoration: none;
+    color: white;
     cursor: pointer;
 }
 
