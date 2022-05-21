@@ -28,6 +28,10 @@ body {
 button {
     padding: 10px;
     border-radius: 10px;
+    padding: 5px 20px;
+    border: none;
+    font-family: Lato;
+    font-size: 14px;
 }
 
 button:hover {
