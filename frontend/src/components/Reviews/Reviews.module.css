@@ -1,3 +1,4 @@
+@import '../../vars.css';
 .dropdown {
     margin-top: 3px;
     border: 2px solid #284F93;
@@ -35,18 +36,20 @@
     text-align: left;
 }
 
-.nextPageButton {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: blue;
-}
-
 .hidePageButton {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: red;
-    margin: 5px;
+    background-color: var(--color-lightBlue);
+    color: white;
+    margin-right: 10px;
 }
 
+.showTitle {
+    font-size: 16px;
+    font-family: lato;
+    font-weight: 400;
+    margin: 10px 0px;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}

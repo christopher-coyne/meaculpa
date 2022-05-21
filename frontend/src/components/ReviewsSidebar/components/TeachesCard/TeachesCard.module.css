@@ -39,10 +39,23 @@
         margin: 3px;
     }
     .container {
-        margin-top: 0px;
-        width: 64%;
+        margin: 0px;
+        width: 65%;
         text-align: left;
         max-height: 200px;
         overflow: scroll;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: 48%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 100%
     }
 }

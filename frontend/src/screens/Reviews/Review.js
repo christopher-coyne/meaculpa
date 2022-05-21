@@ -22,11 +22,9 @@ const Review = () => {
             console.log('data ', data)
 
             setReviewInfo({...data.results, "type": reviewType, })
-            /*
             setTimeout(function () {
                 console.log('review object : ', reviewInfo)
              }, 1);
-             */
 
         }
         fetchData()
@@ -35,12 +33,8 @@ const Review = () => {
   return <>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles.sidebar}>
             <ReviewsSidebar reviewInfo={reviewInfo}/>
-        </div>
-        <div className={styles.reviews}>
             <Reviews reviewInfo={reviewInfo} setReviewInfo={setReviewInfo}/>
-        </div>
       </div>
   </>;
 };

@@ -12,7 +12,7 @@ const TeachesCard = ({reviewInfo}) => {
   console.log('type ', reviewInfo.type)
   console.log('type ', reviewInfo.type)
   if (!reviewInfo || !reviewInfo.reviews ) {
-    return <>hello</>;
+    return <> </>;
   }
 
   const link_dict = {}
@@ -27,7 +27,7 @@ const TeachesCard = ({reviewInfo}) => {
   console.log('ink sorted', link_sorted)
 
   return <div className={styles.container}>
-    <h1 className={styles.title}>Courses taught by this professor: </h1>
+    <h1 className={styles.title}> {reviewInfo.professor ? 'Courses taught by this professor: ' : 'Professors who teach this course: '} </h1>
     {link_sorted.map(link => {
     const myLink = reviewInfo.type =="professor" ? `/course-review/:${link_dict[link]}` : `/professor-review/:${link_dict[link]}`
     return <Link to={myLink} className={styles.link}>{link}</Link>

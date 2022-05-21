@@ -87,8 +87,8 @@ const Reviews = ({reviewInfo, setReviewInfo}) => {
     <ReviewsTexts reviewInfo={reviewInfo} pages={showPages}/>
     
     <div className={styles.pageSelect}>
-      <h3>Showing page {showPages} of {Math.ceil(reviewInfo.reviews.length / 10)}</h3>
-      <button onClick={() => setShowPages(showPages + 1)}>
+      <h3 className={styles.showTitle}>Showing page {showPages} of {Math.ceil(reviewInfo.reviews.length / 10)}</h3>
+      <button onClick={() => setShowPages(showPages + 1)} className={styles.hidePageButton}>
         View More
       </button>
       {showPages > 1 &&

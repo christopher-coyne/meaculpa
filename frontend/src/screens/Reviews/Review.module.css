@@ -3,18 +3,6 @@
     justify-content: center;
 }
 
-.sidebar {
-    width: 30%;
-    text-align: center;
-    padding: 20px;
-}
-
-.reviews {
-    width: 70%;
-    text-align: center;
-    padding: 20px;
-}
-
 @media (max-width: 1200px) {
     .container {
         flex-direction: column;
