@@ -1,16 +1,16 @@
-@import '../../vars.css';
+@import "../../vars.css";
 .text {
-    font-size: 16px;
-    font-family: Lato;
-    font-weight: 400;
+  font-size: 16px;
+  font-family: Lato;
+  font-weight: 400;
 }
 
 .title {
-    font-family: Raleway;
-    font-weight: 500;
-    font-size: 22px;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 22px;
 }
 
 .container {
-    padding-bottom: 15px;
+  padding-bottom: 15px;
 }

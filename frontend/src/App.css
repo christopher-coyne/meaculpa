@@ -1,39 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Palanquin:100,200,300,400,500,600,700,800,900');
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Palanquin:100,200,300,400,500,600,700,800,900");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 :global(.button-sm) {
-    padding: 5px;
-    border: 1px solid red;
+  padding: 5px;
+  border: 1px solid red;
 }
 
 :global(.button-m) {
-    padding: 10px;
-    border: 1px solid red;
+  padding: 10px;
+  border: 1px solid red;
 }
 
 .chartBox {
-    border: 5px solid green;
+  border: 5px solid green;
 }
 
 button {
-    padding: 10px;
-    border-radius: 10px;
-    padding: 5px 20px;
-    border: none;
-    font-family: Lato;
-    font-size: 14px;
+  padding: 10px;
+  border-radius: 10px;
+  padding: 7px 20px;
+  border: none;
+  font-family: Lato;
+  font-size: 14px;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

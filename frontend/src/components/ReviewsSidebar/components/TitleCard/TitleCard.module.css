@@ -1,60 +1,68 @@
 .card {
-    background: #FDC830;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-    padding: 50px 50px 20px 50px;
-    border-radius: 13px;
-    text-align: center;
-    position: relative;
+  background: #fdc830; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f37335,
+    #fdc830
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f37335,
+    #fdc830
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  padding: 50px 50px 20px 50px;
+  border-radius: 13px;
+  text-align: center;
+  position: relative;
 }
 
 .title {
-    font-size: 26px;
-    font-family: raleway;
-    font-weight: 700;
+  font-size: 26px;
+  font-family: raleway;
+  font-weight: 700;
 }
 
 .nugget {
-    position: absolute;
-    left: 0%;
-    top: 5%;
+  position: absolute;
+  left: 0%;
+  top: 5%;
 }
 
 .headerContainer {
-    margin-top: 30px;
-    max-width: 200px;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 30px;
+  max-width: 200px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .subheader {
-    font-size: 26px;
-    font-family: lato;
-    font-weight: 400;
+  font-size: 26px;
+  font-family: lato;
+  font-weight: 400;
 }
 
 .content {
-    border: 3px solid green;
-    text-align: left;
+  border: 3px solid green;
+  text-align: left;
 }
 
 /* tablet size */
 @media (max-width: 1200px) {
-    .card {
-        width: 32%;
-        padding: 70px 20px 20px 20px;
-    }
+  .card {
+    width: 32%;
+    padding: 70px 20px 20px 20px;
+  }
 }
 
 @media (max-width: 900px) {
-    .card {
-        width: 48%;
-    }
+  .card {
+    width: 48%;
+  }
 }
 
 @media (max-width: 500px) {
-    .card {
-        width: 100%;
-    }
+  .card {
+    width: 100%;
+  }
 }

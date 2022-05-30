@@ -1,18 +1,18 @@
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 1200px) {
-    .container {
-        flex-direction: column;
-    }
-    .reviews {
-        width: 100%;
-    }
-    .sidebar {
-        width: 100%;
-        padding-right: 0px;
-        padding-bottom: 0px;
-    }
+  .container {
+    flex-direction: column;
+  }
+  .reviews {
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+    padding-right: 0px;
+    padding-bottom: 0px;
+  }
 }

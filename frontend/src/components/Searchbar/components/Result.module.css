@@ -1,19 +1,19 @@
 .result {
-    border: none;
-    border-radius: 6px;
-    padding: 10px 0px;
-    font-family: lato;
-    font-size: 16;
-    background-color: white;
-    color: #676767;
-    text-align: left;
-    padding-left: 10px;
-    margin-bottom: 2px;
-    cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0px;
+  font-family: lato;
+  font-size: 16;
+  background-color: white;
+  color: #676767;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 2px;
+  cursor: pointer;
 }
 
 .result:hover {
-    background-color: #D1E2FF;
+  background-color: #d1e2ff;
 }
 
 /*

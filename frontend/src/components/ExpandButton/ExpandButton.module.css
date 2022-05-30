@@ -1,36 +1,36 @@
 .expand {
-    border: none;
-    color: blue;
-    background-color: red;
-    display: none;
-    position: absolute;
-    border-radius: 5px;
-    font-family: Lato;
-    font-size: 14px;
-    box-shadow: 0px 3px 6px #B9B9B9;
+  border: none;
+  color: blue;
+  background-color: red;
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  font-family: Lato;
+  font-size: 14px;
+  box-shadow: 0px 3px 6px #b9b9b9;
 }
 
 .triangle {
-    width: 20px;
-    transition: transform .5s;
+  width: 20px;
+  transition: transform 0.5s;
 }
 
 .expand:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .rotated {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 @media (max-width: 500px) {
-    .expand {
-        display: block;
-        bottom: 5px;
-        width: 90%;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .expand {
+    display: block;
+    bottom: 5px;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

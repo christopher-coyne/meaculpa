@@ -1,121 +1,121 @@
-@import '../../vars.css';
+@import "../../vars.css";
 
 .image {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 .container {
-    text-align: center;
-    color: white;
-    padding-top: 100px;
-    z-index: 1;
-    width: 50%;
-    margin: auto;
-    position: relative;
-    height: 85vh;
-    max-width: 750px;
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+  z-index: 1;
+  width: 50%;
+  margin: auto;
+  position: relative;
+  height: 85vh;
+  max-width: 750px;
 }
 
 .siteName {
-    display: flex;
-    margin: auto;
-    margin-bottom: 20px;
-    align-items: center;
-    justify-content: center;
-    font-family: palanquin;
-    font-size: 46px;
-    font-weight: bold;
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  font-family: palanquin;
+  font-size: 46px;
+  font-weight: bold;
 }
 
 .explore {
-    font-weight: bold;
-    font-size: 1.375rem;
-    font-family: raleway;
+  font-weight: bold;
+  font-size: 1.375rem;
+  font-family: raleway;
 }
 
 @media (max-width: 1300px) {
-    .container {
-        padding-top: 80px;
-    }
-    .explore {
-        font-size: 20px;
-    }
-    .siteName {
-        font-size: 40px;
-    }
-    #submitPrompt {
-        font-size: 20px !important;
-    }
+  .container {
+    padding-top: 80px;
+  }
+  .explore {
+    font-size: 20px;
+  }
+  .siteName {
+    font-size: 40px;
+  }
+  #submitPrompt {
+    font-size: 20px !important;
+  }
 }
 
 @media (max-width: 1000px) {
-    .container {
-        padding-top: 50px;
-        border: 3px solid orange;
-        width: 65%;
-    }
+  .container {
+    padding-top: 50px;
+    border: 3px solid orange;
+    width: 65%;
+  }
 }
 
 @media (max-width: 700px) {
-    .container {
-        padding-top: 30px;
-        border: 3px solid red;
-        width: 75%;
-    }
-    .siteName {
-        font-size: 32px;
-    }
-    .explore {
-        font-size: 18px;
-    }
-    .exploreApi {
-        font-size: 12px;
-    }
+  .container {
+    padding-top: 30px;
+    border: 3px solid red;
+    width: 75%;
+  }
+  .siteName {
+    font-size: 32px;
+  }
+  .explore {
+    font-size: 18px;
+  }
+  .exploreApi {
+    font-size: 12px;
+  }
 }
 
 .exploreApi {
-    margin-top: 10px;
-    font-size: 16px;
-    font-family: lato;
-    font-weight: regular;
-    margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: lato;
+  font-weight: regular;
+  margin-bottom: 20px;
 }
 
 .submitLink {
-    display: inline-block;
-    text-decoration: none;
-    margin-top: 10px;
-    background: none;
-    color: white;
-    background-color: var(--color-darkestBlue);
-    border-radius: 5px;
-    font-family: Lato;
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 10px;
+  background: none;
+  color: white;
+  background-color: var(--color-darkestBlue);
+  border-radius: 5px;
+  font-family: Lato;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .submitContainer {
-    position: absolute;
-    bottom: 0%;
-    left: 10%;
-    text-align: left;
-    margin-top: 100px;
+  position: absolute;
+  bottom: 0%;
+  left: 10%;
+  text-align: left;
+  margin-top: 100px;
 }
 
 #submitPrompt {
-    font-size: 22px;
-    font-weight: 400;
-    font-family: raleway;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: raleway;
 }
 
 #searchDetails {
-    position: absolute;
-    top: 40px;
-    z-index: 1;
-    text-align: right;
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+  text-align: right;
 }
 
 .results {
-    /* position: absolute; */
-    z-index: 2;
+  /* position: absolute; */
+  z-index: 2;
 }

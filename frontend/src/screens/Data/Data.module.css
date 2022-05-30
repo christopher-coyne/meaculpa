@@ -1,27 +1,27 @@
 .container {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
 
 .title {
-    font-family: raleway;
-    font-size: 32px;
-    font-weight: 600;
+  font-family: raleway;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .lineGraph {
-    width: 500px;
-    height: 500px;
+  width: 500px;
+  height: 500px;
 }
 
 .chartContainer {
-    width: 50%;
+  width: 50%;
 }
 
 .lineContainer {
-    width: 50%;
+  width: 50%;
 }
 
 .scatterContainer {
-    width: 100%;
+  width: 100%;
 }

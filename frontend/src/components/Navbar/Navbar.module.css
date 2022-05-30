@@ -1,49 +1,48 @@
-@import '../../vars.css';
+@import "../../vars.css";
 * {
-    font-family: Raleway;
+  font-family: Raleway;
 }
 
 .navbar {
-    background-color: var(--color-darkestBlue);
-    padding: 10px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
+  background-color: var(--color-darkestBlue);
+  padding: 10px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
 }
 
 .navButton {
-    color: white;
-    background-color: var(--color-darkestBlue);
-    border: 1px solid white;
-    border-radius: 5px;
-    font-family: Lato;
-    font-size: 14px;
-    padding: var(--padding-top-smallBtn) var(--padding-sides-smallBtn);
-    cursor: pointer;
-    text-decoration: none;
+  color: white;
+  background-color: var(--color-darkestBlue);
+  border: 1px solid white;
+  border-radius: 5px;
+  font-family: Lato;
+  font-size: 14px;
+  padding: 5px 20px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .navLink {
-    font-size: 14px;
-    font-family: Lato;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
+  font-size: 14px;
+  font-family: Lato;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 .navContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 200px;
-    border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  border: 1px solid red;
 }
 
-
 @media (max-width: 1000px) {
-    .navContainer {
-        width: 180px;
-        border: 1px solid blue;
-    }
+  .navContainer {
+    width: 180px;
+    border: 1px solid blue;
+  }
 }
