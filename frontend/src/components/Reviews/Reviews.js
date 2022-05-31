@@ -114,12 +114,14 @@ const Reviews = ({ reviewInfo, setReviewInfo }) => {
           Showing page {showPages} of{" "}
           {Math.ceil(reviewInfo.reviews.length / 10)}
         </h3>
-        <button
-          onClick={() => setShowPages(showPages + 1)}
-          className={styles.hidePageButton}
-        >
-          View More
-        </button>
+        {showPages < Math.ceil(reviewInfo.reviews.length / 10) && (
+          <button
+            onClick={() => setShowPages(showPages + 1)}
+            className={styles.hidePageButton}
+          >
+            View More
+          </button>
+        )}
         {showPages > 1 && (
           <button
             className={styles.hidePageButton}

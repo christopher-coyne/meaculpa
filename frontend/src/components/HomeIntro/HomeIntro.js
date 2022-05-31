@@ -15,7 +15,8 @@ const HomeIntro = () => {
         Explore 100s of Columbia Course and Professor Reviews
       </p>
       <p className={styles.exploreApi}>
-        Taken from Culpa's dataset, available at culpa.app
+        Enter any professor or course to get started (adam cannon, intro to
+        computer science...)
       </p>
       <Searchbar />
       <div className={styles.submitContainer}>

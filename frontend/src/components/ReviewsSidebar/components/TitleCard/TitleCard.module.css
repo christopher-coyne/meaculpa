@@ -11,16 +11,27 @@
     #fdc830
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
-  padding: 50px 50px 20px 50px;
+  padding: 50px 50px 50px 50px;
   border-radius: 13px;
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title {
-  font-size: 26px;
   font-family: raleway;
   font-weight: 700;
+  width: 100%;
+}
+
+.prof {
+  font-size: 30px;
+}
+
+.course {
+  font-size: 24px;
 }
 
 .nugget {
@@ -43,21 +54,32 @@
 }
 
 .content {
-  border: 3px solid green;
-  text-align: left;
+  text-align: center;
+  margin: auto;
+}
+
+.horizontal {
+  height: 1px;
+  border-width: 0px;
+  background-color: white;
+  width: 80%;
+  margin: 5px 0px;
 }
 
 /* tablet size */
 @media (max-width: 1200px) {
   .card {
     width: 32%;
-    padding: 70px 20px 20px 20px;
+    padding: 50px 30px 50px 30px;
   }
 }
 
 @media (max-width: 900px) {
   .card {
     width: 48%;
+  }
+  .title {
+    font-size: 26px;
   }
 }
 

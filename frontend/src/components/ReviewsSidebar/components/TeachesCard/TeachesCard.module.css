@@ -31,7 +31,6 @@
   width: 100%;
   margin: auto;
   margin-top: 15px;
-  max-height: 250px;
 }
 
 @media (max-width: 1200px) {
@@ -44,6 +43,7 @@
     width: 65%;
     text-align: left;
     overflow: scroll;
+    max-height: 200px;
   }
 }
 
