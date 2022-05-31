@@ -5,7 +5,6 @@
 }
 
 .titleContainer {
-  border: 1px solid red;
   font-family: "Raleway";
   margin: auto;
   font-size: 2.125rem;
@@ -31,5 +30,4 @@
   max-width: 750px;
   width: 75%;
   margin: auto;
-  border: 1px solid red;
 }
