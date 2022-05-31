@@ -7,12 +7,4 @@
   .container {
     flex-direction: column;
   }
-  .reviews {
-    width: 100%;
-  }
-  .sidebar {
-    width: 100%;
-    padding-right: 0px;
-    padding-bottom: 0px;
-  }
 }
