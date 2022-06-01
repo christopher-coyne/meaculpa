@@ -1,6 +1,9 @@
 :root {
-
-    /* colors */
-    --color-darkestBlue: #162D45;
-    --color-lightBlue: #4C8DFD;
-  }
+  /* colors */
+  --color-darkestBlue: #162d45;
+  --color-darkBlue: #284f93;
+  --color-lightBlue: #4c8dfd;
+  --color-lightestBlue: #d1e2ff;
+  --color-gold: #ffdf2e;
+  --color-orange: #ff9e2e;
+}
