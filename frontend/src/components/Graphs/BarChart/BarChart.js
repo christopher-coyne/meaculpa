@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { lastDayOfDecade } from "date-fns";
 
 /*
 const BarChart = ({data, width, height, margins}) => {
@@ -40,8 +41,6 @@ const BarChart = ({data, width, height, margins}) => {
 export default BarChart;
 */
 
-const labels = [1999, 2000, 2001, 2002, 2003];
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -59,10 +58,9 @@ const BarChart = ({ data, selected }) => {
   const class_labels = [
     "Operating Systems",
     "Intro to Databases",
-    "Programming Langs and Translators",
     "Analysis of Algorithms",
     "Artificial Intelligence",
-    "User Interface Design",
+    "UI Design",
   ];
   // console.log('bar data : ', data['operating systems i']['hard']/data['operating systems i']['total'])
 
@@ -74,8 +72,6 @@ const BarChart = ({ data, selected }) => {
           data["operating systems i"]["total"],
         data["introduction to databases"][selected] /
           data["introduction to databases"]["total"],
-        data["programming languages and translators"][selected] /
-          data["programming languages and translators"]["total"],
         data["analysis of algorithms i"][selected] /
           data["analysis of algorithms i"]["total"],
         data["artificial intelligence"][selected] /
@@ -83,7 +79,7 @@ const BarChart = ({ data, selected }) => {
         data["user interface design"][selected] /
           data["user interface design"]["total"],
       ],
-      backgroundColor: ["red", "orange", "blue", "gray", "black", "purple"],
+      backgroundColor: ["#003f5c", "#3d708f", "#6996b3", "#94bed9", "#c1e7ff"],
     },
   ];
   return (
@@ -92,17 +88,42 @@ const BarChart = ({ data, selected }) => {
       options={{
         responsive: true,
         maintainAspectRatio: true,
+        plugins: {
+          legend: {
+            display: false,
+          },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return `No. Per Review ${context.formattedValue}`;
+              },
+            },
+          },
+        },
         scales: {
           y: {
             title: {
               display: true,
               text: "Occurences per review",
             },
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 5,
+            },
           },
           x: {
             title: {
-              display: true,
+              display: false,
               text: "Course",
+            },
+            grid: {
+              display: false,
+            },
+            ticks: {
+              font: {
+                family: "lato",
+                size: "14px",
+              },
             },
           },
         },
