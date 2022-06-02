@@ -1,0 +1,47 @@
+@import "../../../../vars.css";
+.container {
+  width: 40%;
+  color: var(--color-darkestBlue);
+}
+
+.category {
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.break {
+  border: none;
+  height: 2px;
+  background: var(--color-darkestBlue);
+  margin: 0px 0px 5px 0px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.content {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 0px;
+}
+
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  color: none;
+  border: 2px solid var(--color-darkestBlue);
+  margin: 0px 3px 0px 0px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 100%;
+  }
+}
