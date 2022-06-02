@@ -96,7 +96,7 @@ const LineGraph = ({ data }) => {
       data={data_json}
       options={{
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
             title: {
@@ -107,7 +107,13 @@ const LineGraph = ({ data }) => {
             time: {
               unit: "year",
             },
-            ticks: {},
+            grid: {
+              display: false,
+            },
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 10,
+            },
             adapters: {
               date: {
                 locale: enUS,
@@ -115,10 +121,17 @@ const LineGraph = ({ data }) => {
             },
           },
           y: {
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 5,
+            },
+            grid: {
+              drawBorder: false,
+            },
             beginAtZero: true,
             title: {
               display: true,
-              text: "Number of Reactions",
+              text: "Reactions",
             },
           },
         },

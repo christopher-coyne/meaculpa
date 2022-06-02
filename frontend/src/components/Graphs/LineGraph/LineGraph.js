@@ -46,6 +46,7 @@ const labels = [
   "2020",
   "2021",
 ];
+/*
 const colors = {
   "adam cannon": "#004c6d",
   "martha kim": "#0094a5",
@@ -53,6 +54,14 @@ const colors = {
   "jae lee": "#9fdb65",
   "ansaf salleb-aouissi": "#ffc629",
 };
+*/
+const colors = {
+  "adam cannon": "#004c6d",
+  "martha kim": "#6996b3",
+  "paul blaer": "#c1e7ff",
+};
+
+const test_profs = ["adam cannon", "martha kim", "paul blaer"];
 
 const LineGraph = ({ data }) => {
   if (!data) {
@@ -62,11 +71,12 @@ const LineGraph = ({ data }) => {
   console.log("new data from line : ", data);
   const data_json = {
     labels: labels,
-    datasets: data.profs.map((prof_name) => {
+    datasets: test_profs.map((prof_name) => {
       return {
         label: prof_name,
         borderColor: colors[prof_name],
         backgroundColor: colors[prof_name],
+        lineTension: 0.1,
         data: Object.keys(data[prof_name])
           .sort()
           .map((date) => {
@@ -92,6 +102,13 @@ const LineGraph = ({ data }) => {
             title: {
               display: true,
               text: "Reviews",
+            },
+            grid: {
+              drawBorder: false,
+            },
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 5,
             },
           },
           x: {

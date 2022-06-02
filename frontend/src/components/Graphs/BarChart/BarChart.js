@@ -87,7 +87,7 @@ const BarChart = ({ data, selected }) => {
       data={{ labels: class_labels, datasets: datasets }}
       options={{
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             display: false,
@@ -103,12 +103,15 @@ const BarChart = ({ data, selected }) => {
         scales: {
           y: {
             title: {
-              display: true,
+              display: false,
               text: "Occurences per review",
             },
             ticks: {
               autoSkip: true,
               maxTicksLimit: 5,
+            },
+            grid: {
+              drawBorder: false,
             },
           },
           x: {
