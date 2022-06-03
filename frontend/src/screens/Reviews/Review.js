@@ -27,7 +27,7 @@ const Review = () => {
       }, 1);
     };
     fetchData();
-  }, []);
+  }, [location]);
 
   return (
     <>

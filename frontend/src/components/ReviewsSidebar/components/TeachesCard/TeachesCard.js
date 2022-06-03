@@ -8,17 +8,23 @@ function onlyUnique(val, index, self) {
 
 const TeachesCard = ({ reviewInfo }) => {
   console.log("all from teaches card");
-  console.log("type ", reviewInfo.type);
-  console.log("type ", reviewInfo.type);
-  console.log("type ", reviewInfo.type);
+  console.log("prof ", reviewInfo.professor);
+  console.log("course ", reviewInfo.course);
+  console.log("type", reviewInfo.type);
   if (!reviewInfo || !reviewInfo.reviews) {
     return <> </>;
   }
 
   const link_dict = {};
-  if (reviewInfo.reviews) {
+  if (reviewInfo.reviews && reviewInfo.professor) {
     reviewInfo.reviews.forEach((review) => {
+      console.log("review : ", review);
       link_dict[review.name] = review.course_id;
+    });
+  } else if (reviewInfo.reviews && reviewInfo.course) {
+    reviewInfo.reviews.forEach((review) => {
+      console.log("review : ", review);
+      link_dict[review.name] = review.prof_id;
     });
   }
 
@@ -36,7 +42,7 @@ const TeachesCard = ({ reviewInfo }) => {
       </h1>
       {link_sorted.map((link) => {
         const myLink =
-          reviewInfo.type == "professor"
+          reviewInfo.type === "professor"
             ? `/course-review/:${link_dict[link]}`
             : `/professor-review/:${link_dict[link]}`;
         return (
