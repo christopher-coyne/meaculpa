@@ -11,20 +11,6 @@ body {
   overflow-x: hidden;
 }
 
-:global(.button-sm) {
-  padding: 5px;
-  border: 1px solid red;
-}
-
-:global(.button-m) {
-  padding: 10px;
-  border: 1px solid red;
-}
-
-.chartBox {
-  border: 5px solid green;
-}
-
 button {
   padding: 10px;
   border-radius: 10px;
