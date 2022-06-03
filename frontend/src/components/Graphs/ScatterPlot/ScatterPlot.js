@@ -1,6 +1,4 @@
 import React from "react";
-import { scaleLinear, max, scaleBand } from "d3";
-import styles from "./ScatterPlot.module.css";
 import "chartjs-adapter-date-fns";
 import { enUS } from "date-fns/locale";
 import { Scatter } from "react-chartjs-2";

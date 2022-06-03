@@ -1,3 +1,4 @@
+@import "../../vars.css";
 .container {
   width: 40%;
   margin: auto;
@@ -19,7 +20,7 @@
 }
 
 .back {
-  color: #162d45;
+  color: var(--color-darkestBlue);
   font-family: lato;
   font-size: 18px;
   margin-top: 20px;
@@ -34,7 +35,7 @@
 }
 
 .break {
-  color: #162d45;
+  color: var(--color-darkestBlue);
   margin-top: 3px;
   margin-bottom: 20px;
 }
@@ -51,14 +52,14 @@
   margin-top: 15px;
   font-family: lato;
   font-weight: 700;
-  color: #162d45;
+  color: var(--color-darkestBlue);
 }
 
 .title {
   font-family: raleway;
   font-size: 26px;
   font-weight: 700;
-  color: #162d45;
+  color: var(--color-darkestBlue);
 }
 
 .input {
@@ -66,7 +67,7 @@
   padding: 10px;
   border-radius: 7px;
   border: none;
-  background-color: #dae8ff;
+  background-color: var(--color-lightestBlue);
 }
 
 .largeInput {
@@ -77,14 +78,14 @@
   font-style: italic;
   font-size: 14px;
   font-family: lato;
-  color: rgb(102, 102, 102);
+  color: var(--color-textGray);
   margin: auto;
 }
 
 .button {
   margin-top: 10px;
   padding: 7px 15px;
-  background-color: #284f93;
+  background-color: var(--color-lightBlue);
   border-radius: 8px;
   color: white;
   font-family: lato;

@@ -1,5 +1,6 @@
+@import "../../../../vars.css";
 .container {
-  background-color: #284f93;
+  background-color: var(--color-darkBlue);
   color: white;
   display: flex;
   margin: auto;
@@ -13,7 +14,7 @@
   padding: 5px 10px;
   font-size: 16px;
   font-family: lato;
-  color: #284f93;
+  color: var(--color-darkBlue);
   background-color: white;
   border-radius: 8px;
   border: none;

@@ -1,28 +1,28 @@
 @import "../../vars.css";
 
 .image {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 .container {
   text-align: center;
   color: white;
-  padding-top: 100px;
+  padding-top: 6.25rem;
   z-index: 1;
   width: 50%;
   margin: auto;
   position: relative;
   height: 85vh;
-  max-width: 750px;
+  max-width: 46.875rem;
 }
 
 .siteName {
   display: flex;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   align-items: center;
   justify-content: center;
   font-family: palanquin;
-  font-size: 46px;
+  font-size: 2.875rem;
   font-weight: bold;
 }
 
@@ -34,63 +34,61 @@
 
 @media (max-width: 1300px) {
   .container {
-    padding-top: 80px;
+    padding-top: 5rem;
   }
   .explore {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .siteName {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   #submitPrompt {
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
   }
 }
 
 @media (max-width: 1000px) {
   .container {
-    padding-top: 50px;
-    border: 3px solid orange;
+    padding-top: 3.125rem;
     width: 65%;
   }
 }
 
 @media (max-width: 700px) {
   .container {
-    padding-top: 30px;
-    border: 3px solid red;
+    padding-top: 1.875rem;
     width: 75%;
   }
   .siteName {
-    font-size: 32px;
+    font-size: 2rem;
   }
   .explore {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   .exploreApi {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 
 .exploreApi {
-  margin-top: 10px;
+  margin-top: 0.625rem;
   font-size: 16px;
   font-family: lato;
   font-weight: regular;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .submitLink {
   display: inline-block;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   background: none;
   color: white;
   background-color: var(--color-darkestBlue);
-  border-radius: 5px;
+  border-radius: 0.313rem;
   font-family: Lato;
-  font-size: 16px;
-  padding: 10px;
+  font-size: 1rem;
+  padding: 0.625rem;
   cursor: pointer;
 }
 
@@ -99,18 +97,18 @@
   bottom: 0%;
   left: 10%;
   text-align: left;
-  margin-top: 100px;
+  margin-top: 6.25rem;
 }
 
 #submitPrompt {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 400;
   font-family: raleway;
 }
 
 #searchDetails {
   position: absolute;
-  top: 40px;
+  top: 2.5rem;
   z-index: 1;
   text-align: right;
 }

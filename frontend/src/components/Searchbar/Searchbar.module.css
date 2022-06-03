@@ -10,6 +10,8 @@
   width: 80%;
 }
 
+/* 
+* search button: taken out for now. not really necessary
 .searchButton {
   font-family: lato;
   font-weight: 500;
@@ -25,6 +27,7 @@
 .magnifying {
   width: 16px;
 }
+*/
 
 .navContainer {
   width: 75%;
@@ -34,7 +37,6 @@
 }
 
 .results {
-  border: 1px solid yellow;
   width: 80%;
   margin-left: 10%;
   margin-top: 5px;

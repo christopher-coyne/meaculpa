@@ -11,8 +11,6 @@ const capitalize = (myStr) => {
 };
 
 const TitleCard = ({ reviewInfo }) => {
-  console.log("title card ", reviewInfo.professor);
-
   let nugget = reviewInfo.professor ? reviewInfo.professor[0].nugget : "none";
   if (!reviewInfo.course && !reviewInfo.professor) {
     return <> </>;

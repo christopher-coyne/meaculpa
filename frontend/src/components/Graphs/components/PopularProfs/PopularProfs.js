@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./PopularProfs.module.css";
 
 const profs = [
   { "Adam Cannon": "2011 -12 Reviews" },

@@ -1,9 +1,10 @@
+@import "../../../../vars.css";
 .link {
-  background-color: #d1e2ff;
+  background-color: var(--color-lightestBlue);
   padding: 10px;
   margin: 15px;
   display: block;
-  color: #284f93;
+  color: var(--color-darkBlue);
   border-radius: 8px;
   text-align: left;
   text-decoration: none;
@@ -12,14 +13,15 @@
 }
 
 .link:hover {
-  left: 10px;
+  background-color: var(--color-darkBlue);
+  color: var(--color-lightestBlue);
 }
 
 .title {
   font-family: raleway;
   font-size: 20px;
   font-weight: 500;
-  color: #162d45;
+  color: var(--color-textGray);
   margin: 20px;
   text-align: left;
 }

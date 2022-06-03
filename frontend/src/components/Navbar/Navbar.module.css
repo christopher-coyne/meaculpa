@@ -37,12 +37,10 @@
   align-items: center;
   justify-content: space-between;
   width: 200px;
-  border: 1px solid red;
 }
 
 @media (max-width: 1000px) {
   .navContainer {
     width: 180px;
-    border: 1px solid blue;
   }
 }

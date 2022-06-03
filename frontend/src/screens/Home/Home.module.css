@@ -39,7 +39,6 @@
 @media (max-width: 1000px) {
   .image {
     top: 220px;
-    border: 1px solid blue;
     right: -9%;
   }
 }
@@ -47,7 +46,6 @@
 @media (max-width: 700px) {
   .image {
     top: 320px;
-    border: 3px solid orange;
   }
 }
 

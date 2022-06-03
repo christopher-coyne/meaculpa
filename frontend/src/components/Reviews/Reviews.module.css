@@ -1,7 +1,7 @@
 @import "../../vars.css";
 .dropdown {
   margin-top: 3px;
-  border: 2px solid #284f93;
+  border: 2px solid var(--color-lightBlue);
   position: absolute;
   left: 200px;
   z-index: 1;
@@ -10,7 +10,7 @@
   padding: 0px 10px 10px 10px;
   font-size: 16px;
   font-family: lato;
-  color: #284f93;
+  color: var(--color-lightBlue);
   text-align: left;
   border-radius: 6px;
 }
@@ -22,7 +22,7 @@
 }
 
 .option:hover {
-  background-color: #d1e2ff;
+  background-color: var(--color-lightestBlue);
   cursor: pointer;
 }
 

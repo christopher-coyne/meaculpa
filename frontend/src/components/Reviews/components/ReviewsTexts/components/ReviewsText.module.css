@@ -1,3 +1,4 @@
+@import "../../../../../vars.css";
 .container {
   border-radius: 16px;
   margin-top: 20px;
@@ -7,18 +8,17 @@
   text-align: left;
   position: relative;
   transition: all 0.5s ease;
+  color: var(--color-textGray);
+  font-family: raleway;
 }
 
 .title {
-  font-family: raleway;
   font-size: 22px;
   font-weight: 600;
-  color: #3a3a3a;
   margin-bottom: 10px;
 }
 
 .date {
-  font-family: raleway;
   font-size: 16px;
   font-weight: 400;
   color: #3a3a3a;
@@ -26,11 +26,10 @@
 }
 
 .workloadTitle {
-  font-family: raleway;
   font-size: 18px;
-  color: #3a3a3a;
   margin-top: 20px;
   font-weight: 400;
+  font-family: lato;
 }
 
 .content {
@@ -38,7 +37,6 @@
   font-size: 16px;
   font-weight: 400;
   margin-top: 5px;
-  color: #3a3a3a;
   max-width: 1000px;
 }
 
