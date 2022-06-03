@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./TitleCard.module.css";
 import goldNugget from "../../../../assets/gold-nugget3.svg";
+import silverNugget from "../../../../assets/silver-nugget.svg";
 
 const capitalize = (myStr) => {
   return myStr
@@ -10,13 +11,24 @@ const capitalize = (myStr) => {
 };
 
 const TitleCard = ({ reviewInfo }) => {
-  // console.log('title card : type : ', type, ' subject : ', subject, ' reviews : ', reviews)
+  console.log("title card ", reviewInfo.professor);
+
+  let nugget = reviewInfo.professor ? reviewInfo.professor[0].nugget : "none";
   if (!reviewInfo.course && !reviewInfo.professor) {
     return <> </>;
   }
   return (
     <div className={styles.card}>
-      <img src={goldNugget} alt="gold nugget" className={styles.nugget}></img>
+      {nugget === "gold" && (
+        <img src={goldNugget} alt="gold nugget" className={styles.nugget}></img>
+      )}
+      {nugget === "silver" && (
+        <img
+          src={silverNugget}
+          alt="gold nugget"
+          className={styles.nugget}
+        ></img>
+      )}
       <h1
         className={`${styles.title} ${
           reviewInfo.professor ? styles.prof : styles.course
