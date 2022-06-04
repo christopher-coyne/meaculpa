@@ -4,6 +4,7 @@ import About from "./screens/About/About";
 import Review from "./screens/Reviews/Review";
 import Submit from "./screens/Submit/Submit";
 import Data from "./screens/Data/Data";
+import NotFound from "./screens/NotFound/NotFound";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/professor-review/:id" element={<Review />} exact />
           <Route path="/submit" element={<Submit />} exact />
           <Route path="/full-data" element={<Data />} exact />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
