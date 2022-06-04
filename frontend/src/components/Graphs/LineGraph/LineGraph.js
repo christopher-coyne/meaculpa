@@ -1,5 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import Loading from "../../../components/Loading/Loading";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -65,7 +66,7 @@ const test_profs = ["adam cannon", "martha kim", "paul blaer"];
 
 const LineGraph = ({ data }) => {
   if (!data) {
-    return <>Loading...</>;
+    return <Loading />;
   }
 
   console.log("new data from line : ", data);

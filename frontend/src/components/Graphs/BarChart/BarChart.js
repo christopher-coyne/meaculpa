@@ -1,5 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import Loading from "../../../components/Loading/Loading";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +10,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { lastDayOfDecade } from "date-fns";
 
 /*
 const BarChart = ({data, width, height, margins}) => {
@@ -52,7 +52,7 @@ ChartJS.register(
 
 const BarChart = ({ data, selected }) => {
   if (!data) {
-    return <>Loading...</>;
+    return <Loading />;
   }
   console.log("selected : ", selected);
   const class_labels = [

@@ -2,6 +2,7 @@ import React from "react";
 import "chartjs-adapter-date-fns";
 import { enUS } from "date-fns/locale";
 import { Scatter } from "react-chartjs-2";
+import Loading from "../../../components/Loading/Loading";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -27,7 +28,7 @@ ChartJS.register(
 
 const LineGraph = ({ data }) => {
   if (!data) {
-    return <>Loading...</>;
+    return <Loading />;
   }
 
   const label_to_data = {
