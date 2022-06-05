@@ -5,10 +5,12 @@ import FormResults from "./components/FormResults";
 import { Link } from "react-router-dom";
 import FormError from "./components/FormError";
 import formLogo from "../../assets/form_icon.png";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 /* <Link className={styles.back}>Back</Link> */
 const Submit = () => {
+  const history = useNavigate();
   const [professorInput, setProfessorInput] = useState("");
   const [courseInput, setCourseInput] = useState("");
 
@@ -76,12 +78,18 @@ const Submit = () => {
     <>
       <Navbar></Navbar>
       <div className={styles.container}>
-        <h1 className={styles.back}>{"< back"}</h1>
-        <img className={styles.icon} src={formLogo} alt="lion logo" />
-        <form className={styles.form} onSubmit={(e) => submitHandler(e)}>
+        <button className={styles.back} onClick={() => history(-1)}>
+          {"< back"}
+        </button>
+        <form
+          className={styles.form}
+          onSubmit={(e) => submitHandler(e)}
+          autoComplete="off"
+        >
+          <img className={styles.icon} src={formLogo} alt="lion logo" />
           <h1 className={styles.title}>Add Your Feedback</h1>
           <hr className={styles.break}></hr>
-          <label for="professor" className={styles.label}>
+          <label htmlFor="professor" className={styles.label}>
             Professor
           </label>
           {errors.professor ? (
@@ -103,7 +111,7 @@ const Submit = () => {
             setInput={setProfessorInput}
             setResults={setProfessorResults}
           />
-          <label for="course" className={styles.label}>
+          <label htmlFor="course" className={styles.label}>
             Course
           </label>
           {errors.course ? (
@@ -125,7 +133,7 @@ const Submit = () => {
             setInput={setCourseInput}
             setResults={setCourseResults}
           />
-          <label for="reviewbody" className={styles.label}>
+          <label htmlFor="reviewbody" className={styles.label}>
             Review Body
           </label>
           {errors.content ? (
@@ -139,7 +147,7 @@ const Submit = () => {
             className={`${styles.input} ${styles.largeInput}`}
             placeholder="Limit to <10k characters"
           ></textarea>
-          <label for="workload" className={styles.label}>
+          <label htmlFor="workload" className={styles.label}>
             Workload
           </label>
           {errors.workload ? (
