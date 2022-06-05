@@ -5,6 +5,7 @@ import LineGraph from "../../components/Graphs/LineGraph/LineGraph";
 import BarChart from "../../components/Graphs/BarChart/BarChart";
 import ScatterPlot from "../../components/Graphs/ScatterPlot/ScatterPlot";
 import ChartBlurb from "../../components/Graphs/components/ChartBlurb/ChartBlurb";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import PopularProfs from "../../components/Graphs/components/PopularProfs/PopularProfs";
 import blurbs from "./blurbs.js";
@@ -38,6 +39,9 @@ const Data = () => {
     <>
       <Navbar />
       <h1 className={styles.title}>Full Data and Insights</h1>
+      <h3 className={styles.smallTitle}>
+        Any More Questions? Check out the <Link to={"/about"}>about page</Link>
+      </h3>
       <div className={styles.chartContainer}>
         <ChartBlurb
           category={popularity.category}
@@ -58,6 +62,7 @@ const Data = () => {
         >
           {barButtons.map((name) => (
             <button
+              key={name}
               name={name}
               selected={wordSelect}
               onClick={() => setWordSelect(name)}

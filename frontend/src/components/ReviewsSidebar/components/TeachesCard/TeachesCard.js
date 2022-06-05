@@ -40,13 +40,13 @@ const TeachesCard = ({ reviewInfo }) => {
           ? "Courses taught by this professor: "
           : "Professors who teach this course: "}{" "}
       </h1>
-      {link_sorted.map((link) => {
+      {link_sorted.map((link, ind) => {
         const myLink =
           reviewInfo.type === "professor"
             ? `/course-review/:${link_dict[link]}`
             : `/professor-review/:${link_dict[link]}`;
         return (
-          <Link to={myLink} className={styles.link}>
+          <Link to={myLink} className={styles.link} key={ind}>
             {link}
           </Link>
         );

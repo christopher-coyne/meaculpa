@@ -8,7 +8,7 @@ const ReviewsTexts = ({ reviewInfo, pages }) => {
       {reviewInfo.reviews &&
         reviewInfo.reviews
           .slice(0, 10 * pages)
-          .map((review) => <ReviewsText review={review} />)}
+          .map((review, ind) => <ReviewsText review={review} key={ind} />)}
     </>
   );
 };

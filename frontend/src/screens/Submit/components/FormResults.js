@@ -12,8 +12,12 @@ const FormResults = ({ input, type, setInput, setResults }) => {
   }
   return (
     <ul className={styles.container}>
-      {input.map((i) => (
-        <li className={styles.result} onClick={() => handleClick(i.name)}>
+      {input.map((i, ind) => (
+        <li
+          className={styles.result}
+          key={ind}
+          onClick={() => handleClick(i.name)}
+        >
           {i.name}
         </li>
       ))}

@@ -52,8 +52,8 @@ const Searchbar = () => {
 
       {filteredData.length > 0 ? (
         <div className={styles.results}>
-          {filteredData.map((data) => (
-            <Result text={data} />
+          {filteredData.map((data, ind) => (
+            <Result text={data} key={ind} />
           ))}
         </div>
       ) : (
