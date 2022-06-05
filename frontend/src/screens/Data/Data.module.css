@@ -8,8 +8,14 @@
   font-family: raleway;
   font-size: 32px;
   font-weight: 600;
-  margin: 20px auto;
+  margin: 20px auto 10px auto;
+  padding: 0px 10px;
   text-align: center;
+}
+
+.smallTitle {
+  text-align: center;
+  padding: 0px 10px;
 }
 
 .chartContainer {
