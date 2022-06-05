@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReviewsTexts from "./components/ReviewsTexts/ReviewsTexts";
 import ReviewsDropdown from "./components/ReviewsDropdown/ReviewsDropdown";
 import styles from "./Reviews.module.css";
+import Loading from "../Loading/Loading";
 
 const options = ["Recent", "Controversial", "Highest Rated"];
 
@@ -80,9 +81,6 @@ const Reviews = ({ reviewInfo, setReviewInfo }) => {
     setReviewInfo({ ...reviewInfo, reviews: newReviews });
   };
 
-  if (!reviewInfo.reviews) {
-    return <div>Loading...</div>;
-  }
   return (
     <div className={styles.container}>
       <ReviewsDropdown
