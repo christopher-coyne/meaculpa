@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+.title {
+  font-weight: 400;
+  font-size: 32px;
+}
+
 .titleContainer {
   font-family: "Raleway";
   margin: auto;
@@ -30,4 +35,13 @@
   max-width: 750px;
   width: 75%;
   margin: auto;
+}
+
+@media (max-width: 500px) {
+  .titleContainer {
+    flex-direction: column;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
 }

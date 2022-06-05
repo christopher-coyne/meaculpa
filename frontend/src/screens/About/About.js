@@ -11,13 +11,13 @@ const About = () => {
       <Navbar />
       <div className={styles.titleContainer}>
         <img src={scale} alt="scale logo" id={styles.image} />
-        <div>
+        <h2 className={styles.title}>
           About <span className={styles.logo}>MeaCulpa</span>
-        </div>
+        </h2>
       </div>
       <div className={styles.aboutContent}>
-        {aboutText.map((about) => (
-          <AboutBulletPoint title={about.title} text={about.text} />
+        {aboutText.map((about, ind) => (
+          <AboutBulletPoint key={ind} title={about.title} text={about.text} />
         ))}
       </div>
     </div>
