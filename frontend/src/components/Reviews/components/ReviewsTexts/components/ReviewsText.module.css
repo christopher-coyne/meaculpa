@@ -49,9 +49,21 @@
   color: #162d45;
   font-size: 16px;
   font-family: lato;
-  border: none;
-  background-color: white;
   margin-right: 40px;
+  margin-top: 20px;
+  color: var(--color-agree);
+}
+
+.disagree {
+  color: #162d45;
+  font-size: 16px;
+  font-family: lato;
+  margin-right: 40px;
+  margin-top: 20px;
+  color: var(--color-disagree);
+}
+
+.reactions {
   margin-top: 20px;
 }
 
@@ -63,5 +75,8 @@
   }
   .expanded {
     max-height: 1000px;
+  }
+  .reactions {
+    margin-bottom: 25px;
   }
 }
