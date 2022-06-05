@@ -44,3 +44,13 @@
     width: 180px;
   }
 }
+
+@media (max-width: 500px) {
+  .navButton {
+    display: none;
+  }
+  .navContainer {
+    display: inline;
+    width: auto;
+  }
+}
