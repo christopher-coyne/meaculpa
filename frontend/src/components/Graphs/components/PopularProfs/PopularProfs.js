@@ -13,15 +13,18 @@ using inline style here since child of another react component. CSS modules will
 const PopularProfs = () => {
   return (
     <>
-      <h7 style={{ "font-size": "16px" }}>Top Years by Professor</h7>
+      <h6 style={{ fontSize: "16px", fontWeight: "600" }}>
+        Top Years by Professor
+      </h6>
       <ul>
-        {profs.map((prof) => {
+        {profs.map((prof, ind) => {
           return (
             <li
+              key={ind}
               style={{
-                "font-weight": "600",
+                fontWeight: "600",
                 margin: "5px 10px",
-                "font-family": "lato",
+                fontFamily: "lato",
               }}
             >
               {Object.keys(prof)}{" "}
