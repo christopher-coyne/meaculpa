@@ -1,14 +1,15 @@
 import { React, useState, useRef, useEffect } from "react";
 import styles from "./ReviewsText.module.css";
 import ExpandButton from "../../../../ExpandButton/ExpandButton";
+import { useLocation } from "react-router-dom";
 
 const ReviewsText = ({ review }) => {
-  const [height, setHeight] = useState(0);
-  const ref = useRef(null);
+  const location = useLocation();
 
-  useEffect(() => {
-    setHeight(ref.current.clientHeight);
-  });
+  const newReview = location.pathname.split("/")[2];
+
+  console.log("new review from review: ", review);
+
   // console.log('review from texts : ', review)
   const [expanded, setExpanded] = useState(false);
   const capName = review.name
@@ -26,10 +27,10 @@ const ReviewsText = ({ review }) => {
   } else {
     return (
       <div
-        className={`${styles.container} ${expanded && styles.expanded}`}
-        ref={ref}
+        className={`${styles.container} ${expanded && styles.expanded} ${
+          review.review_id === newReview && styles.newReview
+        }`}
       >
-        <div>{height}</div>
         <h1 className={styles.title}>{capName}</h1>
         <h2 className={styles.date}>{review.date}</h2>
         <hr className={styles.break}></hr>
@@ -42,10 +43,12 @@ const ReviewsText = ({ review }) => {
           <span className={styles.agree}>{review.agree} Agree</span>{" "}
           <span className={styles.disagree}>{review.disagree} Disagree</span>
         </p>
-        <ExpandButton
-          changeExpand={() => changeExpanded()}
-          expanded={expanded}
-        />
+        {review.workload.length + review.content.length > 500 && (
+          <ExpandButton
+            changeExpand={() => changeExpanded()}
+            expanded={expanded}
+          />
+        )}
       </div>
     );
   }
