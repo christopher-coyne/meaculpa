@@ -14,9 +14,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/about" element={<About />} exact />
-          <Route path="/course-review/:id" element={<Review />} exact />
-          <Route path="/professor-review/:id" element={<Review />} exact />
-          <Route path="/submit" element={<Submit />} exact />
+          <Route path="/course-review/*" element={<Review />} />
+          <Route path="/professor-review/*" element={<Review />} />
+          <Route path="/submit" element={<Submit setNewReview />} exact />
           <Route path="/full-data" element={<Data />} exact />
           <Route path="*" element={<NotFound />} />
         </Routes>
