@@ -22,7 +22,20 @@ const Submit = () => {
     course: false,
     content: false,
     workload: false,
+    createdReview: {},
   });
+
+  useEffect(() => {
+    /* if we have created a review successfully, migrate to that page */
+    if (Object.keys(errors.createdReview).length !== 0) {
+      const newUrl =
+        "/professor-review/" +
+        errors.createdReview.review_id +
+        "/:" +
+        errors.createdReview.prof_id;
+      history(newUrl);
+    }
+  }, [errors]);
 
   const searchInput = async (e, type) => {
     console.log("e input ", e.target.value);
@@ -71,6 +84,7 @@ const Submit = () => {
       course: data.course,
       content: data.content,
       workload: data.workload,
+      createdReview: data.createdReview,
     });
     console.log("results from submit : ", data);
   };
