@@ -1,54 +1,26 @@
-@import "../../../../vars.css";
-.container {
-  background-color: var(--color-darkBlue);
-  color: white;
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 10px 10px 20px;
-  border-radius: 8px;
-}
-
-.addReview {
-  padding: 5px 10px;
+.dropdown {
+  margin-top: 3px;
+  border: 2px solid var(--color-lightBlue);
+  position: absolute;
+  left: 200px;
+  z-index: 1;
+  list-style: none;
+  background-color: white;
+  padding: 0px 10px 10px 10px;
   font-size: 16px;
   font-family: lato;
-  color: var(--color-darkBlue);
-  background-color: white;
-  border-radius: 8px;
-  border: none;
+  color: var(--color-lightBlue);
+  text-align: left;
+  border-radius: 6px;
+}
+
+.option {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.option:hover {
+  background-color: var(--color-lightestBlue);
   cursor: pointer;
-}
-
-.reviewNumber {
-  font-family: lato;
-  font-size: 22px;
-  margin-right: 20px;
-}
-
-.reviewFilter {
-  font-family: lato;
-  font-size: 15px;
-}
-
-.reviewFilter:hover {
-  cursor: pointer;
-}
-
-.image {
-  margin-right: 10px;
-}
-
-@media (max-width: 600px) {
-  .image {
-    display: none;
-  }
-  .reviewNumber {
-    display: none;
-  }
-  .reviewFilter {
-    display: inline-block;
-    margin-right: 10px;
-  }
 }
