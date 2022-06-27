@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReviewsTexts from "./components/ReviewsTexts/ReviewsTexts";
+import ReviewsMenu from "./components/ReviewsMenu/ReviewsMenu";
 import ReviewsDropdown from "./components/ReviewsDropdown/ReviewsDropdown";
+import ReviewsShowMore from "./components/ReviewsShowMore/ReviewsShowMore";
 import styles from "./Reviews.module.css";
-import Loading from "../Loading/Loading";
-
-const options = ["Recent", "Controversial", "Highest Rated"];
 
 const months = {
   January: 1,
@@ -48,9 +47,31 @@ const constroversialSort = (a, b) => {
   return b.disagree - a.disagree;
 };
 
-const Reviews = ({ reviewInfo, setReviewInfo }) => {
+const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
+  /*
+  const sortReviews = (reviewInfo, newState) => {
+    if (!reviewInfo) {
+      return reviewInfo;
+    }
+    let newReviews = [...reviewInfo.reviews];
+    switch (newState) {
+      case "Recent":
+        newReviews.sort(recentSort);
+        break;
+      case "Highest Rated":
+        newReviews.sort(highestRatedSort);
+        break;
+      case "Controversial":
+        newReviews.sort(constroversialSort);
+        break;
+      default:
+        console.log("drop down state not correct");
+        return newReviews;
+    }
+  };
+  */
   const [open, setOpen] = useState(0);
-  const [dropState, setDropState] = useState("Recent");
+  /* const [dropState, setDropState] = useState("Recent"); */
   const [showPages, setShowPages] = useState(1);
 
   const select = (newState) => {
@@ -62,6 +83,7 @@ const Reviews = ({ reviewInfo, setReviewInfo }) => {
 
     // sort them based on state
     // sort by most recent to oldest
+
     let newReviews = [...reviewInfo.reviews];
     switch (newState) {
       case "Recent":
@@ -83,60 +105,22 @@ const Reviews = ({ reviewInfo, setReviewInfo }) => {
 
   return (
     <div className={styles.container}>
-      <ReviewsDropdown
+      <ReviewsMenu
         setOpen={setOpen}
         open={open}
         dropState={dropState}
         numReviews={reviewInfo.reviews.length}
       />
-      {open == 1 ? (
-        <ul className={styles.dropdown}>
-          {options.map((option) => {
-            if (option !== dropState) {
-              return (
-                <li className={styles.option} onClick={() => select(option)}>
-                  {option}
-                </li>
-              );
-            }
-            return <></>;
-          })}
-        </ul>
-      ) : (
-        <> </>
-      )}
+      <ReviewsDropdown open={open} select={select} dropState={dropState} />
       <ReviewsTexts reviewInfo={reviewInfo} pages={showPages} />
 
-      <div className={styles.pageSelect}>
-        <h3 className={styles.showTitle}>
-          Showing page {showPages} of{" "}
-          {Math.ceil(reviewInfo.reviews.length / 10)}
-        </h3>
-        {showPages < Math.ceil(reviewInfo.reviews.length / 10) && (
-          <button
-            onClick={() => setShowPages(showPages + 1)}
-            className={styles.hidePageButton}
-          >
-            View More
-          </button>
-        )}
-        {showPages > 1 && (
-          <button
-            className={styles.hidePageButton}
-            onClick={() => setShowPages(1)}
-          >
-            Hide
-          </button>
-        )}
-      </div>
+      <ReviewsShowMore
+        showPages={showPages}
+        reviewInfo={reviewInfo}
+        setShowPages={setShowPages}
+      />
     </div>
   );
 };
 
 export default Reviews;
-
-/*
-<li className={styles.option} onClick={() => select('Recent')}>Recent</li>
-<li className={styles.option} onClick={() => select('Controversial')}>Controversial</li>
-<li className={styles.option} onClick={() => select('Highest Rated')}>Highest Rated</li>
-*/

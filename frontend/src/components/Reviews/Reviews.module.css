@@ -1,57 +1,9 @@
 @import "../../vars.css";
-.dropdown {
-  margin-top: 3px;
-  border: 2px solid var(--color-lightBlue);
-  position: absolute;
-  left: 200px;
-  z-index: 1;
-  list-style: none;
-  background-color: white;
-  padding: 0px 10px 10px 10px;
-  font-size: 16px;
-  font-family: lato;
-  color: var(--color-lightBlue);
-  text-align: left;
-  border-radius: 6px;
-}
-
-.option {
-  margin-top: 5px;
-  padding: 5px;
-  border-radius: 4px;
-}
-
-.option:hover {
-  background-color: var(--color-lightestBlue);
-  cursor: pointer;
-}
-
-.container {
-  position: relative;
-}
-
-.pageSelect {
-  font-family: lato;
-  font-size: 20px;
-  text-align: left;
-}
-
-.hidePageButton {
-  background-color: var(--color-lightBlue);
-  color: white;
-  margin-right: 10px;
-}
-
-.showTitle {
-  font-size: 16px;
-  font-family: lato;
-  font-weight: 400;
-  margin: 10px 0px;
-}
 
 .container {
   text-align: center;
   padding: 20px;
+  position: relative;
 }
 
 @media (max-width: 600px) {

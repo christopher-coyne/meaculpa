@@ -1,0 +1,18 @@
+.pageSelect {
+  font-family: lato;
+  font-size: 20px;
+  text-align: left;
+}
+
+.showTitle {
+  font-size: 16px;
+  font-family: lato;
+  font-weight: 400;
+  margin: 10px 0px;
+}
+
+.hidePageButton {
+  background-color: var(--color-lightBlue);
+  color: white;
+  margin-right: 10px;
+}
