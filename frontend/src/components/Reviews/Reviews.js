@@ -110,9 +110,14 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
         open={open}
         dropState={dropState}
         numReviews={reviewInfo.reviews.length}
+        reviewInfo={reviewInfo}
       />
       <ReviewsDropdown open={open} select={select} dropState={dropState} />
-      <ReviewsTexts reviewInfo={reviewInfo} pages={showPages} />
+      <ReviewsTexts
+        reviewInfo={reviewInfo}
+        pages={showPages}
+        setReviewInfo={setReviewInfo}
+      />
 
       <ReviewsShowMore
         showPages={showPages}

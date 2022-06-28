@@ -2,14 +2,25 @@ import { React, useState, useRef, useEffect } from "react";
 import styles from "./ReviewsText.module.css";
 import ExpandButton from "../../../../ExpandButton/ExpandButton";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
-const ReviewsText = ({ review }) => {
+const removePost = async (id, setReviewInfo, reviewInfo) => {
+  console.log("rev info remove : ", reviewInfo);
+  const { data } = await axios.post(`/remove-post/${id}`);
+  console.log("data from remove post : ", data);
+
+  setReviewInfo({
+    ...reviewInfo,
+    reviews: reviewInfo.reviews.filter((rev) => {
+      return rev.review_id !== id;
+    }),
+  });
+};
+
+const ReviewsText = ({ review, setReviewInfo, reviewInfo }) => {
   const location = useLocation();
 
   const newReview = location.pathname.split("/")[2];
-
-  console.log("new review from review: ", review);
-
   // console.log('review from texts : ', review)
   const [expanded, setExpanded] = useState(false);
   const capName = review.name
@@ -18,7 +29,6 @@ const ReviewsText = ({ review }) => {
         .map((str) => str[0].toUpperCase() + str.slice(1))
         .join(" ")
     : "";
-  console.log("expanded : ", expanded);
   const changeExpanded = () => {
     expanded ? setExpanded(false) : setExpanded(true);
   };
@@ -43,6 +53,15 @@ const ReviewsText = ({ review }) => {
           <span className={styles.agree}>{review.agree} Agree</span>{" "}
           <span className={styles.disagree}>{review.disagree} Disagree</span>
         </p>
+        {review.date.includes("2022") && (
+          <button
+            onClick={() => {
+              removePost(review.review_id, setReviewInfo, reviewInfo);
+            }}
+          >
+            Delete
+          </button>
+        )}
         {review.workload.length + review.content.length > 500 && (
           <ExpandButton
             changeExpand={() => changeExpanded()}
