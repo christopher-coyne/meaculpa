@@ -4,11 +4,11 @@ import styles from "./AboutBulletPoint.module.css";
 const AboutBulletPoint = ({ title, text }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
+      <div className={`${styles.title} largeText`}>
         {">"}
         {title}
       </div>
-      <div className={styles.text}>{text}</div>
+      <div className={`${styles.title} medText`}>{text}</div>
     </div>
   );
 };
