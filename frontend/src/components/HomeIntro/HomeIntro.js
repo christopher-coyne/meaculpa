@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./HomeIntro.module.css";
 import Searchbar from "../Searchbar/Searchbar.js";
 import scale from "../../assets/scale_icon.svg";
@@ -11,20 +10,19 @@ const HomeIntro = () => {
         <img src={scale} alt="scale logo" className={styles.image} />
         MeaCulpa
       </div>
-      <p className={styles.explore}>
+      <p className={`${styles.explore} largeText`}>
         Explore 100s of Columbia Course and Professor Reviews
       </p>
       <p className={styles.exploreApi}>
-        Enter any professor or course to get started (adam cannon, intro to
-        computer science...)
+        Sample Courses: Data Structures, Discrete Mathematics, Computer Vision
       </p>
       <Searchbar />
       <div className={styles.submitContainer}>
         <h2 id={styles.submitPrompt}>
-          Want your voice heard? Submit a new review!
+          Don't Know Where to Start? Check Out Our Full Data Page!
         </h2>
-        <Link className={styles.submitLink} to="/submit">
-          Submit
+        <Link className={styles.submitLink} to="/full-data">
+          Full Data And Insights
         </Link>
       </div>
     </div>
