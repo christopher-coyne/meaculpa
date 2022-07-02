@@ -1,0 +1,24 @@
+.terms {
+  font-style: italic;
+  font-size: 14px;
+  font-family: lato;
+  color: var(--color-textGray);
+  margin: auto;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  background-color: var(--color-lightestBlue);
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-family: lato;
+  font-weight: 700;
+  color: var(--color-darkestBlue);
+}

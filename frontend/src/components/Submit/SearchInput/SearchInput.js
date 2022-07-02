@@ -1,0 +1,52 @@
+import React from "react";
+import FormError from "../FormError/FormError";
+import FormResults from "../FormResult/FormResults";
+import styles from "./SearchInput.module.css";
+import useFilteredData from "../../../hooks/useFilteredData";
+import capitalize from "../../../utilities/capitalize";
+
+const SearchInput = ({ errors, input, setInput, type }) => {
+  const [filteredData, setFilteredData] = useFilteredData([]);
+  const printInput = async (e) => {
+    setFilteredData(
+      `/search-${type === "professor" ? "prof" : "course"}-name/${
+        e.target.value
+      }`,
+      e.target.value
+    );
+    setInput(e.target.value);
+  };
+  return (
+    <>
+      <label htmlFor={type} className={styles.label}>
+        {capitalize(type)}
+      </label>
+      <p className={styles.terms}>
+        {type === "professor"
+          ? "Examples: Adam Cannon, Jae Lee, Paul Blaer..."
+          : "Computer Vision, Data structures, Discrete Mathematics..."}
+      </p>
+      {errors.professor ? (
+        <FormError error={errors.professor} errorType={type} />
+      ) : (
+        <></>
+      )}
+      <input
+        type="text"
+        id="professor"
+        className={styles.input}
+        placeholder="Select from options"
+        onChange={(e) => printInput(e)}
+        value={input}
+      ></input>
+      <FormResults
+        input={filteredData}
+        type={type}
+        setInput={setInput}
+        setResults={setFilteredData}
+      />
+    </>
+  );
+};
+
+export default SearchInput;
