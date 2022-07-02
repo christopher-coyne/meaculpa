@@ -1,16 +1,9 @@
 import React from "react";
 import styles from "./TeachesCard.module.css";
 import { Link } from "react-router-dom";
-
-function onlyUnique(val, index, self) {
-  return self.indexOf(val) === index;
-}
+import Card from "../../../../basicComponents/Card/Card";
 
 const TeachesCard = ({ reviewInfo }) => {
-  console.log("all from teaches card");
-  console.log("prof ", reviewInfo.professor);
-  console.log("course ", reviewInfo.course);
-  console.log("type", reviewInfo.type);
   if (!reviewInfo || !reviewInfo.reviews) {
     return <> </>;
   }
@@ -18,12 +11,10 @@ const TeachesCard = ({ reviewInfo }) => {
   const link_dict = {};
   if (reviewInfo.reviews && reviewInfo.professor) {
     reviewInfo.reviews.forEach((review) => {
-      console.log("review : ", review);
       link_dict[review.name] = review.course_id;
     });
   } else if (reviewInfo.reviews && reviewInfo.course) {
     reviewInfo.reviews.forEach((review) => {
-      console.log("review : ", review);
       link_dict[review.name] = review.prof_id;
     });
   }
@@ -33,7 +24,7 @@ const TeachesCard = ({ reviewInfo }) => {
   console.log("ink sorted", link_sorted);
 
   return (
-    <div className={styles.container}>
+    <Card>
       <h1 className={styles.title}>
         {" "}
         {reviewInfo.professor
@@ -51,7 +42,7 @@ const TeachesCard = ({ reviewInfo }) => {
           </Link>
         );
       })}
-    </div>
+    </Card>
   );
 };
 
