@@ -24,7 +24,6 @@ const BarChart = ({ data, selected }) => {
   if (!data) {
     return <Loading />;
   }
-  console.log("selected : ", selected);
   const class_labels = [
     "Operating Systems",
     "Intro to Databases",
@@ -32,7 +31,6 @@ const BarChart = ({ data, selected }) => {
     "Artificial Intelligence",
     "UI Design",
   ];
-  // console.log('bar data : ', data['operating systems i']['hard']/data['operating systems i']['total'])
 
   const datasets = [
     {
