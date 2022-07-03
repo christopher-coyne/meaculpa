@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import defaultStyle from "../../basicComponents/Button/button.module.css";
 import styles from "./Data.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import LineGraph from "../../components/Graphs/LineGraph/LineGraph";
@@ -25,9 +26,7 @@ const Data = () => {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(`/get-chart-data`);
-      console.log("chart data : ", data);
       setChartData({
-        ...chartData,
         scatter: data.scatter,
         bar: data.bar,
         line: data.line,
@@ -66,11 +65,11 @@ const Data = () => {
               name={name}
               selected={wordSelect}
               onClick={() => setWordSelect(name)}
-              className={
+              className={`${
                 name === wordSelect
                   ? styles.filterButtonSelected
                   : styles.filterButton
-              }
+              }`}
             >
               {name}
             </button>
@@ -90,18 +89,6 @@ const Data = () => {
           <ScatterPlot data={chartData["scatter"]} />
         </div>
       </div>
-      <div className={styles.chartContainerTest}>
-        <ChartBlurb
-          category={totalReviews.category}
-          header={totalReviews.header}
-          content={totalReviews.content}
-          type={"scatter"}
-        ></ChartBlurb>
-        <div className={styles.chartScatter}>
-          <ScatterPlot data={chartData["scatter"]} />
-        </div>
-      </div>
-      <h1>TBD: More stuff coming!</h1>
     </>
   );
 };
