@@ -45,7 +45,7 @@
 .agree {
   color: #162d45;
   font-family: lato;
-  margin-right: 2.5rem;
+  margin-right: 2rem;
   margin-top: 1.25rem;
   color: var(--color-agree);
 }
@@ -65,6 +65,12 @@
 .newReview {
   border: 2px solid var(--color-agree);
   box-shadow: 0px 3px 6px var(--color-agree);
+}
+
+.deleteButton {
+  background-color: var(--color-warningBackground);
+  color: var(--color-warning);
+  margin-top: 0.625rem;
 }
 
 @media (max-width: 500px) {
