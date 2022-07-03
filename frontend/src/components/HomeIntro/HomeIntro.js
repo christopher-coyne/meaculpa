@@ -10,19 +10,19 @@ const HomeIntro = () => {
         <img src={scale} alt="scale logo" className={styles.image} />
         MeaCulpa
       </div>
-      <p className={`${styles.explore} largeText`}>
+      <h1 className={`${styles.explore} largeText`}>
         Explore 100s of Columbia Course and Professor Reviews
-      </p>
-      <p className={styles.exploreApi}>
+      </h1>
+      <h2 className={`${styles.samples} medText`}>
         Sample Courses: Data Structures, Discrete Mathematics, Computer Vision
-      </p>
+      </h2>
       <Searchbar />
       <div className={styles.submitContainer}>
-        <h2 id={styles.submitPrompt}>
+        <h2 className={`${styles.submitPrompt} largeText`}>
           Don't Know Where to Start? Check Out Our Full Data Page!
         </h2>
         <Link className={styles.submitLink} to="/full-data">
-          Full Data And Insights
+          Full Data
         </Link>
       </div>
     </div>
