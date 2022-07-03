@@ -52,6 +52,7 @@ const ReviewsText = ({ review, setReviewInfo, reviewInfo }) => {
         </p>
         {review.date.includes("2022") && (
           <button
+            className={styles.deleteButton}
             onClick={() => {
               removePost(review.review_id, setReviewInfo, reviewInfo);
             }}
