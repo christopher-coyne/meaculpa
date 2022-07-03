@@ -5,17 +5,19 @@ import mainLogo from "../../../../assets/comments-solid.svg";
 import { useContext } from "react";
 
 import { ToggleDropDown } from "../../../ClickOutsideContext/ClickOutsideContext";
+import { ButtonContext } from "../../../ClickOutsideContext/ClickOutsideContext";
 
 const ReviewsMenu = ({ dropState, numReviews }) => {
   const open = useContext(ToggleDropDown).dropDownOpen;
   const setOpen = useContext(ToggleDropDown).setDropDownOpen;
+  const myref = useContext(ButtonContext);
 
   const toggle = () => {
     if (open === false) {
-      // console.log("open is FALSE, setting open to true");
+      console.log("open is FALSE, setting open to true");
       setOpen(true);
     } else {
-      // console.log("open is TRUE, setting open to false");
+      console.log("open is TRUE, setting open to false");
       setOpen(false);
     }
   };
@@ -27,7 +29,11 @@ const ReviewsMenu = ({ dropState, numReviews }) => {
           <img src={mainLogo} alt="comments" className={styles.image} />
           {numReviews} Reviews
         </span>
-        <span className={styles.reviewFilter} onClick={() => toggle()}>
+        <span
+          className={styles.reviewFilter}
+          onClick={() => toggle()}
+          ref={myref}
+        >
           Sort By: {dropState} V
         </span>
       </div>
