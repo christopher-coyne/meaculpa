@@ -19,8 +19,8 @@ const AboutText = [
     text: (
       <>
         React on the frontend, node + express on the backend. The database is
-        postgreSQL and hosted on Amazon Web Services. I used the python library
-        beautiful soup for the web scraping
+        Postgresql, and hosted with the backend on an AWS EC2 instance. I used
+        the python library beautiful soup for the web scraping
       </>
     ),
   },
@@ -43,8 +43,8 @@ const AboutText = [
         Yep! You can click the “submit” button on the navbar or the homepage. Or
         you can click <Link to={"/submit"}>here</Link>. However, The admin of
         this page (me) reserves the right to remove any review if it has
-        inappropriate content. In the future, I hope to implement authentication
-        + account creation so you can delete reviews as well.
+        inappropriate content. After submitting a review, you can also delete it
+        from the review page.
       </>
     ),
   },
@@ -63,7 +63,7 @@ const AboutText = [
     text: (
       <>
         Major shoutout to www.ui-gradients.com for the free gradient backgrounds
-        :sunglasses"
+        :)
       </>
     ),
   },
