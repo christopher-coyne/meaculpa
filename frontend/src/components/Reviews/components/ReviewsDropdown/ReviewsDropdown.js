@@ -9,7 +9,6 @@ const options = ["Recent", "Controversial", "Highest Rated"];
 
 const ReviewsDropdown = ({ select, dropState }) => {
   const myref = useContext(OutsideContext);
-  console.log("ref val : ", myref.current);
   const open = useContext(ToggleDropDown).dropDownOpen;
   return (
     <>

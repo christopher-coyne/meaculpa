@@ -39,7 +39,6 @@ const LineGraph = ({ data }) => {
     theory: data.theory.names,
     intro: data.intro.names,
   };
-  console.log("data reactions : ", data.reactions);
   const data_json = {
     labels: ["1999-01-01", "2021-12-30"],
     datasets: [
@@ -87,8 +86,6 @@ const LineGraph = ({ data }) => {
       },
     ],
   };
-
-  console.log("datasets : ", data_json);
 
   return (
     <Scatter
@@ -141,6 +138,7 @@ const LineGraph = ({ data }) => {
                 let label = context.dataset.label;
 
                 /*
+                        debugging...
                         console.log('context : ', context)
 
                         console.log('index : ', context.element.$context.index)

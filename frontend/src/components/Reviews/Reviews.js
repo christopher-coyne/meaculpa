@@ -12,28 +12,6 @@ import {
 import { ToggleDropDown } from "../ClickOutsideContext/ClickOutsideContext";
 
 const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
-  /*
-  const sortReviews = (reviewInfo, newState) => {
-    if (!reviewInfo) {
-      return reviewInfo;
-    }
-    let newReviews = [...reviewInfo.reviews];
-    switch (newState) {
-      case "Recent":
-        newReviews.sort(recentSort);
-        break;
-      case "Highest Rated":
-        newReviews.sort(highestRatedSort);
-        break;
-      case "Controversial":
-        newReviews.sort(constroversialSort);
-        break;
-      default:
-        console.log("drop down state not correct");
-        return newReviews;
-    }
-  };
-  */
   // const [open, setOpen] = useState(0);
   const open = useContext(ToggleDropDown).dropDownOpen;
   const setOpen = useContext(ToggleDropDown).setDropDownOpen;
@@ -43,9 +21,6 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
   const select = (newState) => {
     setDropState(newState);
     setOpen(open ? false : true);
-
-    // update review info
-    console.log("reviews from click : ", reviewInfo);
 
     // sort them based on state
     // sort by most recent to oldest
@@ -65,7 +40,6 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
         console.log("drop down state not correct");
     }
 
-    console.log("sorted revs : ", newReviews);
     setReviewInfo({ ...reviewInfo, reviews: newReviews });
   };
 

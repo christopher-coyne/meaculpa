@@ -35,7 +35,6 @@ const Submit = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log("submitting...", e.target[2].value);
     const professor = e.target[0].value;
     const course = e.target[1].value;
     const content = e.target[2].value;
@@ -55,7 +54,6 @@ const Submit = () => {
       workload: data.workload,
       createdReview: data.createdReview,
     });
-    console.log("results from submit : ", data);
   };
   return (
     <>

@@ -28,7 +28,6 @@ const Review = () => {
       //console.log("id and review type : ", id, " ", reviewType);
 
       const { data } = await axios.get(`/get-${reviewType}-reviews/${id}`);
-      console.log("data from base review : ", data);
 
       let unfound = false;
       if (

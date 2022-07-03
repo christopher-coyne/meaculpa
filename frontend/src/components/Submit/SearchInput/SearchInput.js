@@ -7,7 +7,6 @@ import capitalize from "../../../utilities/capitalize";
 import { useCallback } from "react";
 
 const SearchInput = ({ errors, input, setInput, type }) => {
-  console.log("search input rerendering!!!!!!: ");
   const [filteredData, setFilteredData] = useFilteredData([]);
 
   const printInput = useCallback(

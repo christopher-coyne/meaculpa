@@ -6,9 +6,7 @@ import capitalize from "../../../../../utilities/capitalize";
 import axios from "axios";
 
 const removePost = async (id, setReviewInfo, reviewInfo) => {
-  console.log("rev info remove : ", reviewInfo);
-  const { data } = await axios.post(`/remove-post/${id}`);
-  console.log("data from remove post : ", data);
+  await axios.post(`/remove-post/${id}`);
 
   setReviewInfo({
     ...reviewInfo,
