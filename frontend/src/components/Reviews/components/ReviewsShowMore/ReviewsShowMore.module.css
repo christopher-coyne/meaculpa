@@ -1,3 +1,5 @@
+@import "../../../../vars.css";
+
 .pageSelect {
   font-family: lato;
   font-size: 20px;
@@ -11,8 +13,7 @@
   margin: 10px 0px;
 }
 
-.hidePageButton {
+.button {
   background-color: var(--color-lightBlue);
   color: white;
-  margin-right: 10px;
 }

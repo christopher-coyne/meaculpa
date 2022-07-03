@@ -1,7 +1,8 @@
-import { React, useState, useRef, useEffect } from "react";
+import { React, useState } from "react";
 import styles from "./ReviewsText.module.css";
 import ExpandButton from "../../../../ExpandButton/ExpandButton";
 import { useLocation } from "react-router-dom";
+import capitalize from "../../../../../utilities/capitalize";
 import axios from "axios";
 
 const removePost = async (id, setReviewInfo, reviewInfo) => {
@@ -23,12 +24,6 @@ const ReviewsText = ({ review, setReviewInfo, reviewInfo }) => {
   const newReview = location.pathname.split("/")[2];
   // console.log('review from texts : ', review)
   const [expanded, setExpanded] = useState(false);
-  const capName = review.name
-    ? review.name
-        .split(" ")
-        .map((str) => str[0].toUpperCase() + str.slice(1))
-        .join(" ")
-    : "";
   const changeExpanded = () => {
     expanded ? setExpanded(false) : setExpanded(true);
   };
@@ -39,9 +34,11 @@ const ReviewsText = ({ review, setReviewInfo, reviewInfo }) => {
       <div
         className={`${styles.container} ${expanded && styles.expanded} ${
           review.review_id === newReview && styles.newReview
-        }`}
+        } card`}
       >
-        <h1 className={styles.title}>{capName}</h1>
+        <h1 className={`${styles.title} largeText`}>
+          {capitalize(review.name)}
+        </h1>
         <h2 className={styles.date}>{review.date}</h2>
         <hr className={styles.break}></hr>
         <p className={styles.content}>{review.content}</p>

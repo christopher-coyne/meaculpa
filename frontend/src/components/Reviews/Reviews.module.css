@@ -2,12 +2,12 @@
 
 .container {
   text-align: center;
-  padding: 20px;
+  padding: 1.25rem;
   position: relative;
 }
 
 @media (max-width: 600px) {
   .dropdown {
-    left: 20px;
+    left: 1.25rem;
   }
 }

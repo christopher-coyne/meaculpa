@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ReviewsShowMore.module.css";
+import Button from "../../../../basicComponents/Button/Button";
 
 const ReviewsShowMore = ({ showPages, reviewInfo, setShowPages }) => {
   return (
@@ -8,20 +9,19 @@ const ReviewsShowMore = ({ showPages, reviewInfo, setShowPages }) => {
         Showing page {showPages} of {Math.ceil(reviewInfo.reviews.length / 10)}
       </h3>
       {showPages < Math.ceil(reviewInfo.reviews.length / 10) && (
-        <button
+        <Button
           onClick={() => setShowPages(showPages + 1)}
-          className={styles.hidePageButton}
-        >
-          View More
-        </button>
+          input={"Show More"}
+          type="lightBlue"
+          margin
+        />
       )}
       {showPages > 1 && (
-        <button
-          className={styles.hidePageButton}
+        <Button
           onClick={() => setShowPages(1)}
-        >
-          Hide
-        </button>
+          input={"Hide"}
+          type="lightBlue"
+        />
       )}
     </div>
   );

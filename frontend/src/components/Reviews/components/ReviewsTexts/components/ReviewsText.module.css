@@ -1,10 +1,9 @@
 @import "../../../../../vars.css";
 .container {
-  border-radius: 16px;
-  margin-top: 20px;
-  padding: 30px 70px;
+  border-radius: 1rem;
+  margin-top: 1.25rem;
+  padding: 1.875rem 4.375rem;
   width: 100%;
-  box-shadow: 0px 3px 6px #b9b9b9;
   text-align: left;
   position: relative;
   transition: all 0.5s ease;
@@ -13,58 +12,54 @@
 }
 
 .title {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  font-family: lato;
 }
 
 .date {
-  font-size: 16px;
   font-weight: 400;
   color: #3a3a3a;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  font-size: 1.125rem;
 }
 
 .workloadTitle {
-  font-size: 18px;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   font-weight: 400;
-  font-family: lato;
 }
 
 .content {
-  font-family: lato;
-  font-size: 16px;
   font-weight: 400;
-  margin-top: 5px;
+  margin-top: 0.313rem;
   max-width: 1000px;
+  font-family: lato;
 }
 
 .break {
   max-width: 1000px;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .agree {
   color: #162d45;
-  font-size: 16px;
   font-family: lato;
-  margin-right: 40px;
-  margin-top: 20px;
+  margin-right: 2.5rem;
+  margin-top: 1.25rem;
   color: var(--color-agree);
 }
 
 .disagree {
   color: #162d45;
-  font-size: 16px;
   font-family: lato;
-  margin-right: 40px;
-  margin-top: 20px;
+  margin-right: 2.5rem;
+  margin-top: 1.25rem;
   color: var(--color-disagree);
 }
 
 .reactions {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .newReview {

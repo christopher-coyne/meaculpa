@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./TeachesCard.module.css";
 import { Link } from "react-router-dom";
-import Card from "../../../../basicComponents/Card/Card";
 
 const TeachesCard = ({ reviewInfo }) => {
   if (!reviewInfo || !reviewInfo.reviews) {
@@ -24,7 +23,7 @@ const TeachesCard = ({ reviewInfo }) => {
   console.log("ink sorted", link_sorted);
 
   return (
-    <Card>
+    <div className={`${styles.container} card`}>
       <h1 className={styles.title}>
         {" "}
         {reviewInfo.professor
@@ -42,7 +41,7 @@ const TeachesCard = ({ reviewInfo }) => {
           </Link>
         );
       })}
-    </Card>
+    </div>
   );
 };
 

@@ -1,51 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ReviewsTexts from "./components/ReviewsTexts/ReviewsTexts";
 import ReviewsMenu from "./components/ReviewsMenu/ReviewsMenu";
 import ReviewsDropdown from "./components/ReviewsDropdown/ReviewsDropdown";
 import ReviewsShowMore from "./components/ReviewsShowMore/ReviewsShowMore";
 import styles from "./Reviews.module.css";
-
-const months = {
-  January: 1,
-  February: 2,
-  March: 3,
-  April: 4,
-  May: 5,
-  June: 6,
-  July: 7,
-  August: 8,
-  September: 9,
-  October: 10,
-  November: 11,
-  December: 12,
-};
-
-const recentSort = (a, b) => {
-  const adate = a.date.replace(",", "").split(" ");
-  const bdate = b.date.replace(",", "").split(" ");
-
-  if (parseInt(adate[2]) !== parseInt(bdate[2])) {
-    return parseInt(bdate[2]) - parseInt(adate[2]);
-  }
-  // month
-  if (months[adate[0]] !== months[bdate[0]]) {
-    return months[bdate[0]] - months[adate[0]];
-  }
-  // day
-  if (parseInt(adate[1]) !== parseInt(bdate[1])) {
-    return parseInt(bdate[1]) - parseInt(adate[1]);
-  }
-
-  return bdate;
-};
-
-const highestRatedSort = (a, b) => {
-  return b.agree - b.disagree - (a.agree - a.disagree);
-};
-
-const constroversialSort = (a, b) => {
-  return b.disagree - a.disagree;
-};
+import {
+  controversialSort,
+  recentSort,
+  highestRatedSort,
+} from "../../utilities/sorting/sorting";
+import { ToggleDropDown } from "../ClickOutsideContext/ClickOutsideContext";
 
 const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
   /*
@@ -70,7 +34,9 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
     }
   };
   */
-  const [open, setOpen] = useState(0);
+  // const [open, setOpen] = useState(0);
+  const open = useContext(ToggleDropDown).dropDownOpen;
+  const setOpen = useContext(ToggleDropDown).setDropDownOpen;
   /* const [dropState, setDropState] = useState("Recent"); */
   const [showPages, setShowPages] = useState(1);
 
@@ -93,7 +59,7 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
         newReviews.sort(highestRatedSort);
         break;
       case "Controversial":
-        newReviews.sort(constroversialSort);
+        newReviews.sort(controversialSort);
         break;
       default:
         console.log("drop down state not correct");
@@ -128,4 +94,4 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
   );
 };
 
-export default Reviews;
+export default React.memo(Reviews);

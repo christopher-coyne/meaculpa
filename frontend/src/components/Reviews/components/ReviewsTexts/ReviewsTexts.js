@@ -20,4 +20,4 @@ const ReviewsTexts = ({ reviewInfo, pages, setReviewInfo }) => {
   );
 };
 
-export default ReviewsTexts;
+export default React.memo(ReviewsTexts);
