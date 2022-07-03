@@ -1,15 +1,15 @@
 @import "../../../../vars.css";
 .link {
   background-color: var(--color-lightestBlue);
-  padding: 10px;
-  margin: 15px;
+  padding: 0.625rem;
+  margin: 1rem;
   display: block;
   color: var(--color-darkBlue);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   text-align: left;
   text-decoration: none;
   position: relative;
-  max-width: 500px;
+  max-width: 31.25rem;
 }
 
 .link:hover {
@@ -19,18 +19,18 @@
 
 .title {
   font-family: raleway;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   color: var(--color-textGray);
-  margin: 20px;
+  margin: 1.25rem;
   text-align: left;
 }
 
 .container {
-  padding: 10px;
+  padding: 0.625rem;
   width: 100%;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 1rem;
 }
 
 @media (max-width: 1200px) {
@@ -39,24 +39,24 @@
     margin: 3px;
   }
   .container {
-    margin: 0px;
+    margin: 0rem;
     width: 65%;
     text-align: left;
     overflow: scroll;
-    max-height: 200px;
+    max-height: 12.5rem;
   }
 }
 
 @media (max-width: 900px) {
   .container {
-    margin: 0px;
+    margin: 0rem;
     width: 48%;
   }
 }
 
 @media (max-width: 500px) {
   .container {
-    margin: 0px;
+    margin: 0rem;
     width: 100%;
   }
 }

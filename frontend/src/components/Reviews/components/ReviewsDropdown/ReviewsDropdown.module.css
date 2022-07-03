@@ -2,12 +2,11 @@
   margin-top: 3px;
   border: 2px solid var(--color-lightBlue);
   position: absolute;
-  left: 200px;
+  left: 250px;
   z-index: 1;
   list-style: none;
   background-color: white;
   padding: 0px 10px 10px 10px;
-  font-size: 16px;
   font-family: lato;
   color: var(--color-lightBlue);
   text-align: left;
@@ -23,4 +22,10 @@
 .option:hover {
   background-color: var(--color-lightestBlue);
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .dropdown {
+    left: 75px;
+  }
 }

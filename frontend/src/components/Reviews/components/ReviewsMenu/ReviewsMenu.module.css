@@ -6,30 +6,28 @@
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px 10px 20px;
-  border-radius: 8px;
+  padding: 0.625rem 0.625rem 0.625rem 1.25rem;
+  border-radius: 0.5rem;
 }
 
 .addReview {
-  padding: 5px 10px;
-  font-size: 16px;
+  padding: 0.313rem 0.5rem;
   font-family: lato;
   color: var(--color-darkBlue);
   background-color: white;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .reviewNumber {
   font-family: lato;
-  font-size: 22px;
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .reviewFilter {
   font-family: lato;
-  font-size: 15px;
 }
 
 .reviewFilter:hover {
@@ -37,7 +35,7 @@
 }
 
 .image {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 @media (max-width: 600px) {
@@ -49,6 +47,6 @@
   }
   .reviewFilter {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
 }
