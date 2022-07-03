@@ -69,7 +69,6 @@ const LineGraph = ({ data }) => {
     return <Loading />;
   }
 
-  console.log("new data from line : ", data);
   const data_json = {
     labels: labels,
     datasets: test_profs.map((prof_name) => {

@@ -1,7 +1,6 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import styles from "./Searchbar.module.css";
 import Result from "./components/Result";
-import axios from "axios";
 import useFilteredData from "../../hooks/useFilteredData";
 
 const Searchbar = () => {
