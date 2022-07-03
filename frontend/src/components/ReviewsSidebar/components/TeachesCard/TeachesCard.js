@@ -8,6 +8,7 @@ const TeachesCard = ({ reviewInfo }) => {
   }
 
   const link_dict = {};
+  // fill dictionary
   if (reviewInfo.reviews && reviewInfo.professor) {
     reviewInfo.reviews.forEach((review) => {
       link_dict[review.name] = review.course_id;
@@ -20,7 +21,6 @@ const TeachesCard = ({ reviewInfo }) => {
 
   const link_sorted = [...Object.keys(link_dict)];
   link_sorted.sort();
-  console.log("ink sorted", link_sorted);
 
   return (
     <div className={`${styles.container} card`}>
@@ -44,23 +44,5 @@ const TeachesCard = ({ reviewInfo }) => {
     </div>
   );
 };
-
-/* return (reviews.map(review => {return <>hello</>})) */
-
-/*
-const TeachesCard = ({type, subject, reviews}) => {
-  console.log('reviews from teaches card : ', reviews)
-  if (!reviews || reviews.length == 0) {
-    return <>hello</>;
-  }
-  return (<div className={styles.teachesCard}>
-      {reviews.map(review => {
-        const myLink = type =="professor" ? `course-review/:${review.prof_id}` : `professor-review/:${review.course_id}`
-        return <Link to={myLink} className={styles.link}>sup {review.name}</Link>
-      })}
-      hello2
-      </div>);
-};
-*/
 
 export default TeachesCard;

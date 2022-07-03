@@ -2,20 +2,28 @@ import React from "react";
 import styles from "./ReviewsMenu.module.css";
 import { Link } from "react-router-dom";
 import mainLogo from "../../../../assets/comments-solid.svg";
+import { useContext } from "react";
 
-const ReviewsMenu = ({ setOpen, open, dropState, numReviews, reviewInfo }) => {
+import { ToggleDropDown } from "../../../ClickOutsideContext/ClickOutsideContext";
+
+const ReviewsMenu = ({ dropState, numReviews }) => {
+  const open = useContext(ToggleDropDown).dropDownOpen;
+  const setOpen = useContext(ToggleDropDown).setDropDownOpen;
+
   const toggle = () => {
-    setOpen((open + 1) % 2);
+    if (open === false) {
+      // console.log("open is FALSE, setting open to true");
+      setOpen(true);
+    } else {
+      // console.log("open is TRUE, setting open to false");
+      setOpen(false);
+    }
   };
-  /*
-  const url = reviewInfo.type === 'course' ? `/submit/course/${reviewInfo.course[0].name.replace(' ', '%')}` :
-  `/submit/course/${reviewInfo.course[0].name.replace(' ', '%')}`
-  */
 
   return (
     <div className={styles.container}>
       <div>
-        <span className={styles.reviewNumber}>
+        <span className={`${styles.reviewNumber} largeText`}>
           <img src={mainLogo} alt="comments" className={styles.image} />
           {numReviews} Reviews
         </span>

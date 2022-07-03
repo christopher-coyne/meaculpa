@@ -42,7 +42,7 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
 
   const select = (newState) => {
     setDropState(newState);
-    setOpen((open + 1) % 2);
+    setOpen(open ? false : true);
 
     // update review info
     console.log("reviews from click : ", reviewInfo);
@@ -72,8 +72,6 @@ const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
   return (
     <div className={styles.container}>
       <ReviewsMenu
-        setOpen={setOpen}
-        open={open}
         dropState={dropState}
         numReviews={reviewInfo.reviews.length}
         reviewInfo={reviewInfo}

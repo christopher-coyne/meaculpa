@@ -16,9 +16,9 @@ const ChartBlurb = ({ category, header, content, type, children }) => {
   return (
     <div className={styles.container}>
       <div className={styles.circle} />
-      <h3 className={styles.category}>{category}</h3>
+      <h3 className={`${styles.category} smallText`}>{category}</h3>
       <hr className={styles.break} />
-      <h1 className={styles.title}>{header}</h1>
+      <h1 className={`${styles.title} largeText`}>{header}</h1>
       <p className={styles.content}>{content}</p>
       {children}
     </div>

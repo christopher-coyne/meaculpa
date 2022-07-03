@@ -1,25 +1,33 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import styles from "./ReviewsDropdown.module.css";
-import { OutsideContext } from "../../../ClickOutsideContext/ClickOutsideContext";
+import {
+  OutsideContext,
+  ToggleDropDown,
+} from "../../../ClickOutsideContext/ClickOutsideContext";
 
 const options = ["Recent", "Controversial", "Highest Rated"];
 
-const ReviewsDropdown = ({ open, select, dropState }) => {
+const ReviewsDropdown = ({ select, dropState }) => {
   const myref = useContext(OutsideContext);
   console.log("ref val : ", myref.current);
+  const open = useContext(ToggleDropDown).dropDownOpen;
   return (
     <>
-      {open === 1 ? (
+      {open ? (
         <ul className={styles.dropdown} ref={myref}>
-          {options.map((option) => {
+          {options.map((option, ind) => {
             if (option !== dropState) {
               return (
-                <li className={styles.option} onClick={() => select(option)}>
+                <li
+                  className={styles.option}
+                  onClick={() => select(option)}
+                  key={ind}
+                >
                   {option}
                 </li>
               );
             }
-            return <></>;
+            return <React.Fragment key={ind} />;
           })}
         </ul>
       ) : (
