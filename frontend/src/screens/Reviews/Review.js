@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ReviewsSidebar from "../../components/ReviewsSidebar/ReviewsSidebar";
 import TeachesCard from "../../components/ReviewsSidebar/components/TeachesCard/TeachesCard";
 import TitleCard from "../../components/ReviewsSidebar/components/TitleCard/TitleCard";
@@ -9,49 +9,10 @@ import styles from "./Review.module.css";
 import axios from "axios";
 import Loading from "../../components/Loading/Loading";
 import NotFound from "../NotFound/NotFound";
+import ClickOutsideContext from "../../components/ClickOutsideContext/ClickOutsideContext";
+import { recentSort } from "../../utilities/sorting/sorting";
 
-const months = {
-  January: 1,
-  February: 2,
-  March: 3,
-  April: 4,
-  May: 5,
-  June: 6,
-  July: 7,
-  August: 8,
-  September: 9,
-  October: 10,
-  November: 11,
-  December: 12,
-};
-
-const recentSort = (a, b) => {
-  const adate = a.date.replace(",", "").split(" ");
-  const bdate = b.date.replace(",", "").split(" ");
-
-  if (parseInt(adate[2]) !== parseInt(bdate[2])) {
-    return parseInt(bdate[2]) - parseInt(adate[2]);
-  }
-  // month
-  if (months[adate[0]] !== months[bdate[0]]) {
-    return months[bdate[0]] - months[adate[0]];
-  }
-  // day
-  if (parseInt(adate[1]) !== parseInt(bdate[1])) {
-    return parseInt(bdate[1]) - parseInt(adate[1]);
-  }
-
-  return bdate;
-};
-
-const highestRatedSort = (a, b) => {
-  return b.agree - b.disagree - (a.agree - a.disagree);
-};
-
-const constroversialSort = (a, b) => {
-  return b.disagree - a.disagree;
-};
-
+// export const ClickOutsideContext = React.createContext();
 const Review = () => {
   const [reviewInfo, setReviewInfo] = useState({});
   const [dropState, setDropState] = useState("Recent");
@@ -77,6 +38,7 @@ const Review = () => {
         unfound = true;
       }
 
+      // reset the drop down filter to recent
       setDropState("Recent");
 
       setReviewInfo({
@@ -94,27 +56,29 @@ const Review = () => {
   }
   return (
     <>
-      <Navbar />
-      <div className={styles.container}>
-        {!reviewInfo.type ? (
-          <div className={styles.loadingContainer}>
-            <Loading text={"Loading please wait..."} />
-          </div>
-        ) : (
-          <>
-            <ReviewsSidebar>
-              <TitleCard reviewInfo={reviewInfo} />
-              <TeachesCard reviewInfo={reviewInfo} />
-            </ReviewsSidebar>
-            <Reviews
-              reviewInfo={reviewInfo}
-              setReviewInfo={setReviewInfo}
-              setDropState={setDropState}
-              dropState={dropState}
-            />
-          </>
-        )}
-      </div>
+      <ClickOutsideContext>
+        <Navbar />
+        <div className={styles.container}>
+          {!reviewInfo.type ? (
+            <div className={styles.loadingContainer}>
+              <Loading text={"Loading please wait..."} />
+            </div>
+          ) : (
+            <>
+              <ReviewsSidebar>
+                <TitleCard reviewInfo={reviewInfo} />
+                <TeachesCard reviewInfo={reviewInfo} />
+              </ReviewsSidebar>
+              <Reviews
+                reviewInfo={reviewInfo}
+                setReviewInfo={setReviewInfo}
+                setDropState={setDropState}
+                dropState={dropState}
+              />
+            </>
+          )}
+        </div>
+      </ClickOutsideContext>
     </>
   );
 };
