@@ -1,9 +1,9 @@
 import React from "react";
 
 const profs = [
-  { "Adam Cannon": "2011 -12 Reviews" },
-  { "Paul Blaer": "2009 - 12 Reviews" },
-  { "Martha Kim": "2017 - 18 Reviews" },
+  { "Adam Cannon": "2011 and 2020 - 9 Reviews" },
+  { "Paul Blaer": "2020 - 7 Reviews" },
+  { "Martha Kim": "2018 - 13 Reviews" },
 ];
 
 /*
