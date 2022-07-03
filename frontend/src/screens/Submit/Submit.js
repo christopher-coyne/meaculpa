@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Submit.module.css";
 import Navbar from "../../components/Navbar/Navbar";
-import cards from "../../basicComponents/card.module.css";
 import formLogo from "../../assets/form_icon.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -62,16 +61,19 @@ const Submit = () => {
     <>
       <Navbar></Navbar>
       <div className={styles.container}>
-        <button className={styles.back} onClick={() => history(-1)}>
+        <button
+          className={`${styles.back} largeText`}
+          onClick={() => history(-1)}
+        >
           {"< back"}
         </button>
         <form
-          className={`${styles.form} ${cards.card}`}
+          className={`${styles.form} card`}
           onSubmit={(e) => submitHandler(e)}
           autoComplete="off"
         >
           <img className={styles.icon} src={formLogo} alt="Add" />
-          <h1 className={styles.title}>Add Your Feedback</h1>
+          <h1 className={`${styles.title} largerText`}>Add Your Feedback</h1>
           <hr className={styles.break}></hr>
           <SearchInput
             errors={errors}
@@ -87,14 +89,12 @@ const Submit = () => {
           />
           <LargeInput error={errors.content} type="content" />
           <LargeInput error={errors.workload} type="workload" />
-          <p className={styles.terms}>
+          <p className={`${styles.terms} smallText`}>
             By submitting, you are agreeing to our terms and conditions
           </p>
-          <input
-            type="submit"
-            className={styles.button}
-            placeholder="Submit"
-          ></input>
+          <button type="submit" className={styles.button} placeholder="Submit">
+            Submit
+          </button>
         </form>
       </div>
       ;

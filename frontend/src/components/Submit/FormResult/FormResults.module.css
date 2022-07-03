@@ -1,17 +1,16 @@
 .container {
   background-color: #dae8ff;
   list-style: none;
-  margin: 10px 0px;
-  padding: 0px 10px;
+  margin: 0.625rem 0px;
+  padding: 0px 0.625rem;
   max-height: 100px;
   overflow-y: scroll;
-  border-radius: 9px;
+  border-radius: 0.625rem;
 }
 
 .result {
   font-family: lato;
-  font-size: 14px;
-  margin: 15px 10px;
+  margin: 1rem 0.625rem;
 }
 
 .result:hover {

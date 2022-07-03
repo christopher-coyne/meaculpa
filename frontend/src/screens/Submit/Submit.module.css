@@ -22,9 +22,8 @@
 .back {
   color: var(--color-darkestBlue);
   font-family: raleway;
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
   font-weight: 600;
   border: none;
   background-color: transparent;
@@ -32,67 +31,40 @@
 
 .form {
   text-align: left;
-  border-radius: 15px;
-  box-shadow: 0px 3px 6px rgb(92, 92, 92);
-  padding: 40px 40px 40px 40px;
+  border-radius: 1rem;
+  padding: 3.125rem;
   position: relative;
 }
 
 .break {
   color: var(--color-darkestBlue);
-  margin-top: 3px;
-  margin-bottom: 20px;
+  margin-top: 0.188rem;
+  margin-bottom: 1.25rem;
 }
 
 .icon {
   position: absolute;
   left: 8%;
-  top: -25px;
-}
-
-.label {
-  display: block;
-  margin-bottom: 5px;
-  margin-top: 15px;
-  font-family: lato;
-  font-weight: 700;
-  color: var(--color-darkestBlue);
+  top: -1.5rem;
 }
 
 .title {
   font-family: raleway;
-  font-size: 26px;
   font-weight: 700;
   color: var(--color-darkestBlue);
 }
 
-.input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 7px;
-  border: none;
-  background-color: var(--color-lightestBlue);
-}
-
-.largeInput {
-  height: 100px;
-}
-
 .terms {
   font-style: italic;
-  font-size: 14px;
   font-family: lato;
   color: var(--color-textGray);
   margin: auto;
 }
 
 .button {
-  margin-top: 10px;
-  padding: 7px 15px;
   background-color: var(--color-lightBlue);
-  border-radius: 8px;
   color: white;
   font-family: lato;
   border: none;
-  cursor: pointer;
+  margin-top: 0.625rem;
 }

@@ -4,24 +4,30 @@ import FormResults from "../FormResult/FormResults";
 import styles from "./SearchInput.module.css";
 import useFilteredData from "../../../hooks/useFilteredData";
 import capitalize from "../../../utilities/capitalize";
+import { useCallback } from "react";
 
 const SearchInput = ({ errors, input, setInput, type }) => {
+  console.log("search input rerendering!!!!!!: ");
   const [filteredData, setFilteredData] = useFilteredData([]);
-  const printInput = async (e) => {
-    setFilteredData(
-      `/search-${type === "professor" ? "prof" : "course"}-name/${
+
+  const printInput = useCallback(
+    (e) => {
+      setFilteredData(
+        `/search-${type === "professor" ? "prof" : "course"}-name/${
+          e.target.value
+        }`,
         e.target.value
-      }`,
-      e.target.value
-    );
-    setInput(e.target.value);
-  };
+      );
+      setInput(e.target.value);
+    },
+    [setFilteredData, setInput, type]
+  );
   return (
     <>
       <label htmlFor={type} className={styles.label}>
         {capitalize(type)}
       </label>
-      <p className={styles.terms}>
+      <p className={`${styles.terms} smallText`}>
         {type === "professor"
           ? "Examples: Adam Cannon, Jae Lee, Paul Blaer..."
           : "Computer Vision, Data structures, Discrete Mathematics..."}
@@ -49,4 +55,4 @@ const SearchInput = ({ errors, input, setInput, type }) => {
   );
 };
 
-export default SearchInput;
+export default React.memo(SearchInput);

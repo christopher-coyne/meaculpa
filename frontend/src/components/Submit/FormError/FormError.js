@@ -9,15 +9,13 @@ const messages = {
 };
 
 const FormError = ({ error, errorType }) => {
-  {
-    return error ? (
-      <h2 className={styles.error}>
-        {errorType ? messages[errorType] : "Error"}
-      </h2>
-    ) : (
-      <></>
-    );
-  }
+  return error ? (
+    <h2 className={`${styles.error} smallText`}>
+      {errorType ? messages[errorType] : "Error"}
+    </h2>
+  ) : (
+    <></>
+  );
 };
 
-export default FormError;
+export default React.memo(FormError);

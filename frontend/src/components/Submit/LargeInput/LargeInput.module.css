@@ -1,20 +1,20 @@
 .input {
   width: 100%;
-  padding: 10px;
-  border-radius: 7px;
+  padding: 0.625rem;
+  border-radius: 0.438rem;
   border: none;
   background-color: var(--color-lightestBlue);
 }
 
 .label {
   display: block;
-  margin-bottom: 5px;
-  margin-top: 15px;
+  margin-bottom: 0.313rem;
+  margin-top: 1rem;
   font-family: lato;
   font-weight: 700;
   color: var(--color-darkestBlue);
 }
 
 .largeInput {
-  height: 100px;
+  height: 6.25rem;
 }

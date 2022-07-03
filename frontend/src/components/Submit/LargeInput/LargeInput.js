@@ -4,7 +4,6 @@ import styles from "./LargeInput.module.css";
 import capitalize from "../../../utilities/capitalize";
 
 const LargeInput = ({ error, type }) => {
-  console.log("type : ", type);
   return (
     <>
       <label
@@ -24,4 +23,4 @@ const LargeInput = ({ error, type }) => {
   );
 };
 
-export default LargeInput;
+export default React.memo(LargeInput);

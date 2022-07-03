@@ -1,10 +1,10 @@
+@import "../../../vars.css";
 .error {
-  background-color: #ffc4c4;
-  color: #ff1010;
-  padding: 10px;
-  margin: 5px 0px;
+  background-color: var(--color-warningBackground);
+  color: var(--color-warning);
+  padding: 0.625rem;
+  margin: 0.313rem 0rem;
   font-family: lato;
-  font-size: 14px;
   font-weight: 400;
-  border-radius: 9px;
+  border-radius: 0.563rem;
 }
