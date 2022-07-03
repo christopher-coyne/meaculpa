@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import defaultStyle from "../../basicComponents/Button/button.module.css";
 import styles from "./Data.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import LineGraph from "../../components/Graphs/LineGraph/LineGraph";
@@ -19,7 +18,7 @@ const { totalReviews } = blurbs;
 
 const Data = () => {
   const [chartData, setChartData] = useState({});
-  const [wordSelect, setWordSelect] = useState(["easy"]);
+  const [wordSelect, setWordSelect] = useState("easy");
 
   const barButtons = ["easy", "hard", "interesting", "boring", "fair"];
 
