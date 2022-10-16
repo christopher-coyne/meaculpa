@@ -24,7 +24,8 @@ const Data = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(`/get-chart-data`);
+      const { data } = await axios.get(`/chart`);
+      console.log(data);
       setChartData({
         scatter: data.scatter,
         bar: data.bar,
