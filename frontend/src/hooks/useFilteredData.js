@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 
 /* searches API on key change, sets state to anything that matches input */
 const useFilteredData = () => {

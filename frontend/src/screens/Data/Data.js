@@ -6,9 +6,9 @@ import BarChart from "../../components/Graphs/BarChart/BarChart";
 import ScatterPlot from "../../components/Graphs/ScatterPlot/ScatterPlot";
 import ChartBlurb from "../../components/Graphs/components/ChartBlurb/ChartBlurb";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import PopularProfs from "../../components/Graphs/components/PopularProfs/PopularProfs";
 import blurbs from "./blurbs.js";
+import axios from "../../api/axios";
 
 const { popularity } = blurbs;
 

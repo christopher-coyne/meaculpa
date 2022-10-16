@@ -3,7 +3,7 @@ import styles from "./Submit.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import formLogo from "../../assets/form_icon.png";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../api/axios";
 import LargeInput from "../../components/Submit/LargeInput/LargeInput";
 import SearchInput from "../../components/Submit/SearchInput/SearchInput";
 

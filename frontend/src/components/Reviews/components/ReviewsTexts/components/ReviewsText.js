@@ -3,7 +3,7 @@ import styles from "./ReviewsText.module.css";
 import ExpandButton from "../../../../ExpandButton/ExpandButton";
 import { useLocation } from "react-router-dom";
 import capitalize from "../../../../../utilities/capitalize";
-import axios from "axios";
+import axios from "../../../../../api/axios";
 
 const removePost = async (id, setReviewInfo, reviewInfo) => {
   await axios.delete(`/post/${id}`);

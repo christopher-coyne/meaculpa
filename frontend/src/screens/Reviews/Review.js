@@ -6,7 +6,7 @@ import Reviews from "../../components/Reviews/Reviews";
 import Navbar from "../../components/Navbar/Navbar";
 import { useLocation } from "react-router-dom";
 import styles from "./Review.module.css";
-import axios from "axios";
+import axios from "../../api/axios";
 import Loading from "../../components/Loading/Loading";
 import NotFound from "../NotFound/NotFound";
 import ClickOutsideContext from "../../components/ClickOutsideContext/ClickOutsideContext";
