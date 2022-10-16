@@ -12,7 +12,7 @@ const SearchInput = ({ errors, input, setInput, type }) => {
   const printInput = useCallback(
     (e) => {
       setFilteredData(
-        `/search-${type === "professor" ? "prof" : "course"}-name/${
+        `/${type === "professor" ? "professor" : "course"}/name/${
           e.target.value
         }`,
         e.target.value
@@ -31,10 +31,11 @@ const SearchInput = ({ errors, input, setInput, type }) => {
           ? "Examples: Adam Cannon, Jae Lee, Paul Blaer..."
           : "Computer Vision, Data structures, Discrete Mathematics..."}
       </p>
-      {errors.professor ? (
+      {errors.professor && type === "professor" && (
         <FormError error={errors.professor} errorType={type} />
-      ) : (
-        <></>
+      )}
+      {errors.course && type === "course" && (
+        <FormError error={errors.course} errorType={type} />
       )}
       <input
         type="text"

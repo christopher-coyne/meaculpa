@@ -6,7 +6,7 @@ import capitalize from "../../../../../utilities/capitalize";
 import axios from "axios";
 
 const removePost = async (id, setReviewInfo, reviewInfo) => {
-  await axios.post(`/remove-post/${id}`);
+  await axios.delete(`/post/${id}`);
 
   setReviewInfo({
     ...reviewInfo,

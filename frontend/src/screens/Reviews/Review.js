@@ -27,7 +27,8 @@ const Review = () => {
     const fetchData = async () => {
       //console.log("id and review type : ", id, " ", reviewType);
 
-      const { data } = await axios.get(`/get-${reviewType}-reviews/${id}`);
+      console.log("fetching data from ", `/${reviewType}/reviews/${id}`);
+      const { data } = await axios.get(`/${reviewType}/reviews/${id}`);
 
       let unfound = false;
       if (

@@ -7,7 +7,7 @@ const Searchbar = () => {
   // const [userInput, setUserInput] = useState('');
   const [filteredData, setFilteredData] = useFilteredData();
   const printInput = async (e) => {
-    setFilteredData(`/match-term-all/${e.target.value}`, e.target.value);
+    setFilteredData(`/reviewentity/${e.target.value}`, e.target.value);
   };
 
   return (

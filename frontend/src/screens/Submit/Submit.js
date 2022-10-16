@@ -39,7 +39,7 @@ const Submit = () => {
     const course = e.target[1].value;
     const content = e.target[2].value;
     const workload = e.target[3].value;
-    const url = "/submit";
+    const url = "/review";
     const { data } = await axios.post(url, {
       professor,
       course,
@@ -47,6 +47,7 @@ const Submit = () => {
       workload,
     });
 
+    console.log("data from submit handler : ", data);
     setErrors({
       professor: data.professor,
       course: data.course,
