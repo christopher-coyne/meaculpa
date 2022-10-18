@@ -47,7 +47,6 @@ const Submit = () => {
       workload,
     });
 
-    console.log("data from submit handler : ", data);
     setErrors({
       professor: data.professor,
       course: data.course,

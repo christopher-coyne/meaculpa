@@ -10,7 +10,6 @@ const useFilteredData = () => {
       return;
     }
     const { data } = await axios.get(url);
-    console.log("data : ", data);
     setFilteredData(data.results);
   };
 

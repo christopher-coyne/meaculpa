@@ -14,10 +14,8 @@ const ReviewsMenu = ({ dropState, numReviews }) => {
 
   const toggle = () => {
     if (open === false) {
-      console.log("open is FALSE, setting open to true");
       setOpen(true);
     } else {
-      console.log("open is TRUE, setting open to false");
       setOpen(false);
     }
   };
