@@ -14,7 +14,18 @@ const HomeIntro = () => {
         Explore 100s of Columbia Course and Professor Reviews
       </h1>
       <h2 className={`${styles.samples} medText`}>
-        Sample Courses: Data Structures, Discrete Mathematics, Computer Vision
+        Sample Courses:{" "}
+        <Link className={styles.courseLink} to="/course-review/:4">
+          Data Structures
+        </Link>
+        ,{" "}
+        <Link className={styles.courseLink} to="/course-review/:397">
+          Discrete Mathematics
+        </Link>
+        ,{" "}
+        <Link className={styles.courseLink} to="/course-review/:2386">
+          Computer Vision
+        </Link>
       </h2>
       <Searchbar />
       <div className={styles.submitContainer}>
