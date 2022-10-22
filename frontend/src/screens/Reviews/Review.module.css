@@ -1,6 +1,9 @@
 .container {
   display: flex;
   justify-content: center;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0px 2rem;
 }
 
 .loadingContainer {

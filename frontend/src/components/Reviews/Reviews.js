@@ -12,10 +12,8 @@ import {
 import { ToggleDropDown } from "../ClickOutsideContext/ClickOutsideContext";
 
 const Reviews = ({ reviewInfo, setReviewInfo, dropState, setDropState }) => {
-  // const [open, setOpen] = useState(0);
   const open = useContext(ToggleDropDown).dropDownOpen;
   const setOpen = useContext(ToggleDropDown).setDropDownOpen;
-  /* const [dropState, setDropState] = useState("Recent"); */
   const [showPages, setShowPages] = useState(1);
 
   const select = (newState) => {
