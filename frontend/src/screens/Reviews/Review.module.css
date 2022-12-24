@@ -3,7 +3,7 @@
   justify-content: center;
   max-width: 1400px;
   margin: auto;
-  padding: 0px 2rem;
+  padding: 0% 2%;
 }
 
 .loadingContainer {
@@ -13,5 +13,6 @@
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
+    padding: 0%;
   }
 }

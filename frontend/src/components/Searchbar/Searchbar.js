@@ -5,11 +5,10 @@ import useFilteredData from "../../hooks/useFilteredData";
 
 const Searchbar = () => {
   // const [userInput, setUserInput] = useState('');
-  const [filteredData, setFilteredData] = useFilteredData();
+  const [filteredData, setFilteredData] = useFilteredData([]);
   const printInput = async (e) => {
     setFilteredData(`/reviewentity/${e.target.value}`, e.target.value);
   };
-
   return (
     <>
       <input

@@ -12,7 +12,6 @@ import NotFound from "../NotFound/NotFound";
 import ClickOutsideContext from "../../components/ClickOutsideContext/ClickOutsideContext";
 import { recentSort } from "../../utilities/sorting/sorting";
 
-// export const ClickOutsideContext = React.createContext();
 const Review = () => {
   const [reviewInfo, setReviewInfo] = useState({});
   const [dropState, setDropState] = useState("Recent");
@@ -25,9 +24,6 @@ const Review = () => {
   // get all reviews associated with this id
   useEffect(() => {
     const fetchData = async () => {
-      //console.log("id and review type : ", id, " ", reviewType);
-
-      console.log("fetching data from ", `/${reviewType}/reviews/${id}`);
       const { data } = await axios.get(`/${reviewType}/reviews/${id}`);
 
       let unfound = false;
